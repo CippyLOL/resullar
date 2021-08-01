@@ -51,13 +51,13 @@ function App() {
                       label="Full Name"
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid item xs={8}>
                     <TextFieldWrapper
                       name="email"
                       label="Your email"
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid item xs={4}>
                     <TextFieldWrapper
                       name="phone"
                       label="Your phone number"
