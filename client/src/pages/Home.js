@@ -7,7 +7,7 @@ function Home() {
     return (
         <div>
             <img src={logo} alt="Resullar Logo" />
-
+            
             <h1>What is Resullar?</h1>
             <p>Resullar is a resume builder that provides an effective layout for users to use, which will 
                 enable hiring managers to see their talents and skills in the best way possible. </p>
@@ -22,7 +22,6 @@ function Home() {
             
             <h1>What are the different types of collar jobs?</h1>
             <table>
-                
                 <tr>
                     <th>Types</th>
                     <th>General description</th>
