@@ -6,6 +6,7 @@ function Home() {
 
     return (
         <div>
+            
             <img src={logo} alt="Resullar Logo" />
 
             <h1>What is Resullar?</h1>
@@ -22,7 +23,6 @@ function Home() {
             
             <h1>What are the different types of collar jobs?</h1>
             <table>
-                
                 <tr>
                     <th>Types</th>
                     <th>General description</th>
@@ -42,7 +42,6 @@ function Home() {
                     <td>A pink-collar worker performs in the service industry. 
                         The work involves interacting with people/customers. </td>
                 </tr>
-
             </table>
 
         </div>
