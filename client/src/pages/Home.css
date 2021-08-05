@@ -1,0 +1,29 @@
+img {
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: left;
+    margin-left: 25px;
+    margin-right: 50%;
+}
+
+p {
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 50%;
+}
+
+table, th, td {
+    border:1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: 25px;
+    width: 47%;
+}
+
+th, td {
+    height: 50px;
+}
