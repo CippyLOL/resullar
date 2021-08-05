@@ -22,6 +22,7 @@ function Home() {
             
             <h1>What are the different types of collar jobs?</h1>
             <table>
+                
                 <tr>
                     <th>Types</th>
                     <th>General description</th>
