@@ -1,35 +1,55 @@
 import React from "react";
 import '../App.css';
 import { Link } from 'react-router-dom';
-import { withTheme } from "@material-ui/core";
+import resullarLogoWhite from '../images/resullarLogoWhite.svg'
 
 function Header() {
 
     const navLinksStyle = {
         color: 'white',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        fontWeight: 'bold',
     };
 
     const navStyle = {
         display: 'flex',
         justifyContent: 'center',
-        minHeight: '5vh',
-        background: 'rgb(12, 24, 255)',
-        color: 'white'
+        alignItems: 'center',
+        background: '#00B8EE',
+        color: 'white',
+        height: '10vh',
 
     };
 
     const ulStyle = {
-        width: '55%',
+        marginLeft: '30%',
+        width: '30%',
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
         listStyle: 'none'
     };
 
+    const login = {
+        background: '#AC00EE',
+        padding: '10px',
+        borderRadius: '10px',
+    };
+
+    const logo = {
+        height: '50px',
+        padding: '10px',
+        // display: 'flex',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        display: 'inline-block',
+        paddingBottom: '10px',
+    };
+
     return (
         <nav style={navStyle}>
-            <h3>Resullar</h3>
+            {/* <h3>Resullar</h3> */}
+            <img src={resullarLogoWhite} alt="Resullar Logo White" style={logo} />
             <ul style={ulStyle}>
                 <Link style={navLinksStyle} to="/">
                     <li>Home</li>
@@ -38,7 +58,7 @@ function Header() {
                     <li>Resume Builder</li>
                 </Link>
                 <Link style={navLinksStyle} to="/login">
-                    <li>Login</li>
+                    <li style={login}>Login</li>
                 </Link>
 
             </ul>

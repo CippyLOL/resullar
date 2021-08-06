@@ -4,21 +4,30 @@ import * as Yup from 'yup';
 import TextFieldWrapper from '../components/formComponents/formUI/TextField';
 import ButtonWrapper from '../components/formComponents/formUI/Button';
 import { Grid, Container, Typography } from '@material-ui/core';
+import { withStyles } from "@material-ui/core/styles";
 
+const styles = {
+    root: {
+        background: "black"
+    },
+    input: {
+        color: "#2EFF22"
+    }
+};
 
 const initialFormState = {
     fName: "",
     email: "",
     phone: "",
     address: "",
-}
+};
 
 const formValidation = Yup.object().shape({
     fName: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     phone: Yup.number().integer().typeError('Invalid phone number').required('Required'),
     address: Yup.string().required('Required'),
-})
+});
 
 function ResumeBuilderForm() {
     return (
