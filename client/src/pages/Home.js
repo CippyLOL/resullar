@@ -10,7 +10,7 @@ function Home() {
 
 
             <section className={'mainSection'}>
-                <img src={logo} alt="Resullar Logo" style={{ height: '180px', paddingBlock: '10px' }} />
+                <img src={logo} alt="Resullar Logo" style={{ height: '250px', paddingBlock: '10px' }} />
 
                 {/* <h1>What is Resullar?</h1> */}
                 <h2 style={{ padding: '5%' }}>Resullar is a resume builder that provides an effective layout for job-seekers to use, enabling hiring managers to see their talents and skills in the best way possible. </h2>
