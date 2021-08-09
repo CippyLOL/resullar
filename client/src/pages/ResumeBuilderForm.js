@@ -139,7 +139,141 @@ function ResumeBuilderForm() {
                         </Form>
                     </Formik>
                 </div>
-
+                <div className="formWrapper">
+                    <Formik
+                        initialValues={initialFormState}
+                        validationSchema={formValidation}
+                        onSubmit={values => {
+                            console.log(values);
+                        }}
+                    >
+                        <Form>
+                            <Grid container spacing={2}>
+                                <Grid item xs={12}>
+                                    <Typography variant="h3">
+                                        Work Experience
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextFieldWrapper
+                                        name="companyName"
+                                        label="Your Company"
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextFieldWrapper
+                                        name="workLocation"
+                                        label="Work location"
+                                    />
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <TextFieldWrapper
+                                        name="startYear"
+                                        label="Start Year"
+                                    />
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <TextFieldWrapper
+                                        name="endYear"
+                                        label="End Year"
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextFieldWrapper multiline rows={10}
+                                        name="workDescription"
+                                        label="Your job role"
+                                    />
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <ButtonWrapper>Prev</ButtonWrapper>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <ButtonWrapper>Next</ButtonWrapper>
+                                </Grid>
+                            </Grid>
+                        </Form>
+                    </Formik>
+                </div>
+                <div className="formWrapper">
+                    <Formik
+                        initialValues={initialFormState}
+                        validationSchema={formValidation}
+                        onSubmit={values => {
+                            console.log(values);
+                        }}
+                    >
+                        <Form>
+                            <Grid container spacing={2}>
+                                <Grid item xs={12}>
+                                    <Typography variant="h3">
+                                        Skills
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextFieldWrapper
+                                        name="skillName"
+                                        label="Your Skill"
+                                    />
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <ButtonWrapper>Prev</ButtonWrapper>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <ButtonWrapper>Next</ButtonWrapper>
+                                </Grid>
+                            </Grid>
+                        </Form>
+                    </Formik>
+                </div>
+                <div className="formWrapper">
+                    <Formik
+                        initialValues={initialFormState}
+                        validationSchema={formValidation}
+                        onSubmit={values => {
+                            console.log(values);
+                        }}
+                    >
+                        <Form>
+                            <Grid container spacing={2}>
+                                <Grid item xs={12}>
+                                    <Typography variant="h3">
+                                        Projects
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextFieldWrapper
+                                        name="projectName"
+                                        label="Your Company"
+                                    />
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <TextFieldWrapper
+                                        name="startYear"
+                                        label="Start Year"
+                                    />
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <TextFieldWrapper
+                                        name="endYear"
+                                        label="End Year"
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextFieldWrapper multiline rows={10}
+                                        name="projectDescription"
+                                        label="About your project"
+                                    />
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <ButtonWrapper>Prev</ButtonWrapper>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <ButtonWrapper>Submit</ButtonWrapper>
+                                </Grid>
+                            </Grid>
+                        </Form>
+                    </Formik>
+                </div>
             </Container>
         </div>
     )

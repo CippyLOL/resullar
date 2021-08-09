@@ -60,47 +60,52 @@ const Education = () => {
                     >
                         <Form>
                             <Grid container spacing={2}>
-                                <Grid item xs={12}>
-                                    <Typography variant="h3">
-                                        Education
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <TextFieldWrapper
-                                        name="schoolName"
-                                        label="School name"
-                                    />
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <TextFieldWrapper
-                                        name="location"
-                                        label="School location"
-                                    />
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <TextFieldWrapper
-                                        name="major"
-                                        label="Your major"
-                                    />
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <TextFieldWrapper
-                                        name="certification"
-                                        label="Certification obtained (if any)"
-                                    />
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <TextFieldWrapper
-                                        name="startYear"
-                                        label="Start Year"
-                                    />
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <TextFieldWrapper
-                                        name="endYear"
-                                        label="End Year"
-                                    />
-                                </Grid>
+                                <FieldArray name={education}>
+                                    {
+                                        fieldArrayProps => {
+                                            console.log('fieldArrrayProps', fieldArrayProps);
+                                            const { push, remove, form } = fieldArrayProps;
+                                            const { values } = form;
+                                            return (
+                                                <div>
+                                                    {values.map((education, index) => (
+                                                        <div key={index}>
+                                                            <Grid item xs={12}>
+                                                                <TextFieldWrapper
+                                                                    name={`education[${index}].schoolName`}
+                                                                    label="School name"
+                                                                />
+                                                            </Grid>
+                                                            <Grid item xs={12}>
+                                                                <TextFieldWrapper
+                                                                    name={`education[${index}].location`}
+                                                                    label="School location"
+                                                                />
+                                                            </Grid>
+                                                            <Grid item xs={6}>
+                                                                <Button
+                                                                    variant='contained'
+                                                                    color='primary'
+                                                                    fullWidth='true'
+                                                                    onClick={() => remove(index)}
+                                                                > - </Button>
+                                                            </Grid>
+                                                            <Grid item xs={6}>
+                                                                <Button
+                                                                    variant='contained'
+                                                                    color='primary'
+                                                                    fullWidth='true'
+                                                                    onClick={() => push({ id: 0, schoolName: "", location: "", })}
+                                                                > + </Button>
+                                                            </Grid>
+                                                        </div>
+                                                    ))
+                                                    }
+                                                </div>)
+                                        }
+                                    }
+
+                                </FieldArray>
                                 <Grid item xs={6}>
                                     <Button
                                         variant='contained'
