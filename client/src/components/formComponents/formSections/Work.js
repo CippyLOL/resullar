@@ -10,12 +10,11 @@ import FormContext from '../../../context/FormContext';
 
 // ARRAY
 const validationSchema = Yup.object().shape({
-    education: Yup.array().of(
+    work: Yup.array().of(
         Yup.object().shape({
-            schoolName: Yup.string(),
+            companyName: Yup.string(),
             location: Yup.string(),
-            major: Yup.string(),
-            certification: Yup.string(),
+            jobRole: Yup.string(),
             startYear: Yup.number().integer().typeError('Invalid year'),
             endYear: Yup.number().integer().typeError('Invalid year'),
         })
@@ -33,17 +32,21 @@ const resumeForm = {
 
 
 
-export const Education = () => {
-    const { education, setEducation, next, prev } = useContext(FormContext);
+export const Work = () => {
+
+
+    const { work, setWork, next, prev } = useContext(FormContext);
+
+
     return (
         <div style={resumeForm}>
             <Container maxWidth="md">
                 <Formik
-                    initialValues={education}
+                    initialValues={work}
                     validationSchema={validationSchema}
                     onSubmit={(values) => {
-                        setEducation(values);
-                        console.log(education);
+                        setWork(values);
+                        console.log(work);
                         next();
                         // prev();
                     }}
@@ -53,12 +56,12 @@ export const Education = () => {
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
                                     <Typography variant="h3">
-                                        Education
+                                        Work Experience
                                     </Typography>
                                 </Grid>
 
                                 <FieldArray
-                                    name="education"
+                                    name="work"
                                     render={arrayHelpers => (
                                         <div>
 
@@ -66,19 +69,19 @@ export const Education = () => {
                                                 fullWidth
                                                 variant='contained'
                                                 style={{ width: '15em', marginTop: '1em', marginBottom: '2em' }}
-                                                onClick={() => arrayHelpers.push({ schoolName: "", location: "", major: "", certification: "", startYear: "", endYear: "", })}
+                                                onClick={() => arrayHelpers.push({ companyName: "", location: "", jobRole: "", startYear: "", endYear: "", })}
                                             >
-                                                Add Education
+                                                Add Work
                                             </Button>
 
 
                                             {
-                                                values.education.map((education, index) => (
+                                                values.work.map((work, index) => (
                                                     <Grid container direction="row" spacing={3} key={index}>
                                                         {/** both these conventions do the same */}
                                                         <Grid item xs={4}>
                                                             <Typography variant="h4" style={{ display: 'block', textAlign: 'left' }}>
-                                                                Education {index + 1}
+                                                                Work Experience {index + 1}
                                                             </Typography>
                                                         </Grid>
                                                         <Grid item xs={1} style={{ alignItem: 'left' }}>
@@ -91,37 +94,32 @@ export const Education = () => {
                                                         </Grid>
                                                         <Grid item xs={12}>
                                                             <TextFieldWrapper
-                                                                name={`education.${index}.schoolName`}
-                                                                label="School Name"
+                                                                name={`work.${index}.companyName`}
+                                                                label="Company Name"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={12}>
                                                             <TextFieldWrapper
-                                                                name={`education.${index}.location`}
-                                                                label="School Location"
+                                                                name={`work.${index}.location`}
+                                                                label="Company Location"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={12}>
                                                             <TextFieldWrapper
-                                                                name={`education.${index}.major`}
-                                                                label="Major"
-                                                            />
-                                                        </Grid>
-                                                        <Grid item xs={12}>
-                                                            <TextFieldWrapper
-                                                                name={`education.${index}.certification`}
-                                                                label="Certification Obtained"
+                                                                multiline rows={10}
+                                                                name={`work.${index}.jobRole`}
+                                                                label="Job Role"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`education.${index}.startYear`}
+                                                                name={`work.${index}.startYear`}
                                                                 label="Start Year"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`education.${index}.endYear`}
+                                                                name={`work.${index}.endYear`}
                                                                 label="End Year"
                                                             />
                                                         </Grid>
@@ -168,4 +166,4 @@ export const Education = () => {
 }
 
 
-export default Education;
+export default Work;
