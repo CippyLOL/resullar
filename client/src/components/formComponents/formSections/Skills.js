@@ -127,13 +127,13 @@ export const Skills = () => {
                                 <Grid item xs={12}>
                                     <Box display="flex" justifyContent="space-between" >
                                         <Button
-                                            p={1}
+
                                             variant='contained'
                                             color='primary'
                                             fullWidth
                                             onClick={prev}
                                         >Back</Button>
-                                        <ButtonWrapper p={1}>Review Sections</ButtonWrapper>
+                                        <ButtonWrapper>Review Sections</ButtonWrapper>
                                     </Box>
                                 </Grid>
 
