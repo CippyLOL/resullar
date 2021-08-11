@@ -28,12 +28,11 @@ const resumeForm = {
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: '3rem',
-    paddingTop: '3rem',
 };
 
 
 
-export const Education = () => {
+export const Test = () => {
     const { education, setEducation, next, prev } = useContext(FormContext);
     return (
         <div style={resumeForm}>
@@ -61,34 +60,22 @@ export const Education = () => {
                                     name="education"
                                     render={arrayHelpers => (
                                         <div>
-
                                             <Button
-                                                fullWidth
                                                 variant='contained'
-                                                style={{ width: '15em', marginTop: '1em', marginBottom: '2em' }}
                                                 onClick={() => arrayHelpers.push({ schoolName: "", location: "", major: "", certification: "", startYear: "", endYear: "", })}
                                             >
-                                                Add Education
+                                                +
                                             </Button>
-
-
                                             {
                                                 values.education.map((education, index) => (
                                                     <Grid container direction="row" spacing={3} key={index}>
                                                         {/** both these conventions do the same */}
-                                                        <Grid item xs={4}>
-                                                            <Typography variant="h4" style={{ display: 'block', textAlign: 'left' }}>
+                                                        <Grid item xs={12}>
+                                                            <Typography variant="h4">
                                                                 Education {index + 1}
                                                             </Typography>
                                                         </Grid>
-                                                        <Grid item xs={1} style={{ alignItem: 'left' }}>
-                                                            <Button
-                                                                color='secondary'
-                                                                variant='contained'
-                                                                onClick={() => arrayHelpers.remove(index)}>
-                                                                Delete
-                                                            </Button>
-                                                        </Grid>
+
                                                         <Grid item xs={12}>
                                                             <TextFieldWrapper
                                                                 name={`education.${index}.schoolName`}
@@ -130,11 +117,11 @@ export const Education = () => {
                                                         </Grid>
 
 
-                                                        {/* <Button
+                                                        <Button
                                                             variant='contained'
                                                             onClick={() => arrayHelpers.remove(index)}>
                                                             -
-                                                        </Button> */}
+                                                        </Button>
                                                     </Grid>
                                                 ))}
 
@@ -168,4 +155,4 @@ export const Education = () => {
 }
 
 
-export default Education;
+export default Test;

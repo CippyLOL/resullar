@@ -4,6 +4,7 @@ import { Provider } from '../context/FormContext';
 import Personal from "../components/formComponents/formSections/Personal"
 import Education from "../components/formComponents/formSections/Education"
 import Review from "../components/formComponents/formSections/Review"
+import Test from "../components/formComponents/formSections/test"
 
 // const { Step } = Steps;
 
@@ -18,10 +19,13 @@ const personalInitialState = {
 const educationInitialState = {
     education: [
         {
-            id: 0, schoolName: "", location: "", major: "", certification: "", startYear: "", endYear: "",
+            schoolName: "", location: "", major: "", certification: "", startYear: "", endYear: "",
         },
-    ],
+
+
+    ]
 };
+
 
 const renderStep = (step) => {
     switch (step) {
@@ -40,7 +44,7 @@ const UserForm = () => {
 
     // setState for each form section component and step
     const [personal, setPersonal] = useState(personalInitialState);
-    const [education, setEducation] = useState(educationInitialState.education);
+    const [education, setEducation] = useState(educationInitialState);
     const [currentStep, setCurrentStep] = useState(0);
 
     const next = () => {

@@ -15,7 +15,7 @@ const Footer = () => {
     return (
         <div style={footerStyle}>
             <h4>Created by UOL (Goldsmith) Computer Science - Agile Team 54</h4>
-            <a href="https://github.com/CippyLOL/resullar" target="_blank" style={{ textDecoration: 'none' }}>GitHub</a>
+            <a href="https://github.com/CippyLOL/resullar" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>GitHub</a>
         </div>
     );
 }
