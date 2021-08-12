@@ -13,8 +13,9 @@ function Register() {
 
     const validationSchema = Yup.object().shape({
         username: Yup.string().required(),
-        password: Yup.string().min(7).max(45).required()
-    })
+        password: Yup.string().min(7).max(45).required(),
+        passwordConfirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')
+    });
 
     const onSubmit = (data) => {
         console.log(data);
@@ -41,6 +42,12 @@ function Register() {
                                 <TextFieldWrapper
                                     name="password"
                                     label="Password"
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextFieldWrapper
+                                    name="passwordConfirmation"
+                                    label="Confirm your password"
                                 />
                             </Grid>
                             <Grid item xs={12}>
