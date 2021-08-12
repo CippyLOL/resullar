@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 import {Formik, Form, Field, ErrorMessage} from "formik";
 import * as Yup from "yup"
 import {Grid, Container, Typography, Button} from '@material-ui/core';
 import TextFieldWrapper from '../components/formComponents/formUI/TextField';
 import ButtonWrapper from '../components/formComponents/formUI/Button';
 
-function Login() {
+function Register() {
 
     const initialValues = {
         username: "", password: ""
@@ -13,23 +13,23 @@ function Login() {
 
     const validationSchema = Yup.object().shape({
         username: Yup.string().required(),
-        password: Yup.string().required()
-    })
+        password: Yup.string().min(7).max(45).required(),
+        passwordConfirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')
+    });
 
     const onSubmit = (data) => {
         console.log(data);
     };
 
-
     return (
-        <div className="LoginForm">
+        <div className="RegisterForm">
             <Container maxWidth="md">
                 <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                     <Form>
                         <Grid container spacing={2}>
                             <Grid item xs ={12}>
                                 <Typography variant="h3" align="center">
-                                    Login Information
+                                    Account Registration
                                 </Typography>
                             </Grid>
                             <Grid item xs={12}>
@@ -45,14 +45,13 @@ function Login() {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <ButtonWrapper>Login</ButtonWrapper> 
+                                <TextFieldWrapper
+                                    name="passwordConfirmation"
+                                    label="Confirm your password"
+                                />
                             </Grid>
                             <Grid item xs={12}>
-                                <br></br>
-                                Don't have an account? <br></br>
-                                <Button href="/register" variant="contained" size="large">
-                                    Register Now!
-                                </Button>
+                                <ButtonWrapper>Register</ButtonWrapper> 
                             </Grid>
                         </Grid>
                     </Form>
@@ -64,4 +63,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default Register

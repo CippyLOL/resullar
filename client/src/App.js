@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import ResumeBuilderForm from "./pages/ResumeBuilderForm";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 
 // const initialFormState = {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/resumebuilder" component={ResumeBuilderForm} />
           <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
         </Switch>
         <Footer />
       </div>
