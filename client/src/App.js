@@ -17,9 +17,9 @@ function App() {
 
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/resumebuilder" component={ResumeBuilderForm} />
+          {/* <Route path="/resumebuilder" component={ResumeBuilderForm} /> */}
+          <Route path="/userform" component={UserForm} />
           <Route path="/login" component={Login} />
-
           <Route path="/register" component={Register} />
 
         </Switch>

@@ -60,14 +60,18 @@ function Header() {
                 <Link style={navLinksStyle} to="/">
                     <li>Home</li>
                 </Link>
+                {/* PREVIOUS FORM
                 <Link style={navLinksStyle} to="/resumebuilder">
+                    <li>Resume Builder</li>
+                </Link> */}
+                <Link style={navLinksStyle} to="/userform">
                     <li>Resume Builder</li>
                 </Link>
                 <Link style={navLinksStyle} to="/login">
                     <li style={login}>Login</li>
                 </Link>
                 <Link style={navLinksStyle} to="/register">
-                    <li style={register}>Register</li>
+                    <li style={login}>Register</li>
                 </Link>
 
             </ul>
