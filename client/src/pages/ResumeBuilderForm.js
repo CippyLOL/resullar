@@ -4,16 +4,6 @@ import * as Yup from 'yup';
 import TextFieldWrapper from '../components/formComponents/formUI/TextField';
 import ButtonWrapper from '../components/formComponents/formUI/Button';
 import { Grid, Container, Typography } from '@material-ui/core';
-import { withStyles } from "@material-ui/core/styles";
-
-const styles = {
-    root: {
-        background: "black"
-    },
-    input: {
-        color: "#2EFF22"
-    }
-};
 
 const initialFormState = {
     fName: "",
@@ -29,9 +19,17 @@ const formValidation = Yup.object().shape({
     address: Yup.string().required('Required'),
 });
 
+const resumeForm = {
+    minHeight: '80vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: '3rem',
+};
+
 function ResumeBuilderForm() {
     return (
-        <div className="resumeForm">
+        <div style={resumeForm}>
             <Container maxWidth="md">
                 <div className="formWrapper">
                     <Formik
@@ -74,7 +72,7 @@ function ResumeBuilderForm() {
                                 </Grid>
 
                                 <Grid item xs={12}>
-                                    <ButtonWrapper>Submit</ButtonWrapper>
+                                    <ButtonWrapper>Next</ButtonWrapper>
                                 </Grid>
                             </Grid>
                         </Form>
