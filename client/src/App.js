@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ResumeBuilderForm from "./pages/ResumeBuilderForm";
 import UserForm from "./pages/UserForm";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 
 function App() {
@@ -18,7 +19,9 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/resumebuilder" component={ResumeBuilderForm} />
           <Route path="/login" component={Login} />
-          <Route path="/userform" component={UserForm} />
+
+          <Route path="/register" component={Register} />
+
         </Switch>
         <Footer />
       </div>

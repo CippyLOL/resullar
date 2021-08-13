@@ -275,6 +275,7 @@ function ResumeBuilderForm() {
                     </Formik>
                 </div>
             </Container>
+            <br></br>
         </div>
     )
 }

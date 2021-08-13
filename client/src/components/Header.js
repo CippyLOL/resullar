@@ -46,6 +46,12 @@ function Header() {
         paddingBottom: '10px',
     };
 
+    const register = {
+        background: '#A52A2A',
+        padding: '10px',
+        borderRadius: '10px',
+    }
+
     return (
         <nav style={navStyle}>
             {/* <h3>Resullar</h3> */}
@@ -59,6 +65,9 @@ function Header() {
                 </Link>
                 <Link style={navLinksStyle} to="/login">
                     <li style={login}>Login</li>
+                </Link>
+                <Link style={navLinksStyle} to="/register">
+                    <li style={register}>Register</li>
                 </Link>
 
             </ul>
