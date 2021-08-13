@@ -14,7 +14,7 @@ const validationSchema = Yup.object().shape({
         Yup.object().shape({
             companyName: Yup.string(),
             location: Yup.string(),
-            jobRole: Yup.string(),
+            aboutProject: Yup.string(),
             startYear: Yup.number().integer().typeError('Invalid year'),
             endYear: Yup.number().integer().typeError('Invalid year'),
         })
@@ -107,13 +107,13 @@ export const Projects = () => {
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`work.${index}.startYear`}
+                                                                name={`projects.${index}.startYear`}
                                                                 label="Start Year"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`work.${index}.endYear`}
+                                                                name={`projects.${index}.endYear`}
                                                                 label="End Year"
                                                             />
                                                         </Grid>
