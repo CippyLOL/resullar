@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import TextFieldWrapper from '../components/formComponents/formUI/TextField';
 import ButtonWrapper from '../components/formComponents/formUI/Button';
 import { Grid, Container, Typography } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 const initialFormState = {
-    fName: "",
+    fullname: "",
     email: "",
     phone: "",
     address: "",
 };
 
 const formValidation = Yup.object().shape({
-    fName: Yup.string().required('Required'),
+    fullname: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     phone: Yup.number().integer().typeError('Invalid phone number').required('Required'),
     address: Yup.string().required('Required'),
@@ -27,7 +29,15 @@ const resumeForm = {
     paddingBottom: '3rem',
 };
 
-function ResumeBuilderForm() {
+function ResumeBuilderForm() {  
+    let history = useHistory();
+
+    const onSubmit = (data) => {
+        axios.post("http://localhost:3001/resumebuilder", data).then((response) => {
+            history.push("/preview");
+        });
+    };
+
     return (
         <div style={resumeForm}>
             <Container maxWidth="md">
@@ -35,9 +45,7 @@ function ResumeBuilderForm() {
                     <Formik
                         initialValues={initialFormState}
                         validationSchema={formValidation}
-                        onSubmit={values => {
-                            console.log(values);
-                        }}
+                        onSubmit={onSubmit} 
                     >
                         <Form>
                             <Grid container spacing={2}>
@@ -48,7 +56,7 @@ function ResumeBuilderForm() {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <TextFieldWrapper
-                                        name="fName"
+                                        name="fullname"
                                         label="Full Name"
                                     />
                                 </Grid>

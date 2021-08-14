@@ -1,9 +1,12 @@
 import './App.css';
+import axios from 'axios';
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ResumeBuilderForm from "./pages/ResumeBuilderForm";
+import Preview from "./pages/Preview";
 import Login from "./pages/Login";
 
 
@@ -31,6 +34,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/resumebuilder" component={ResumeBuilderForm} />
+          <Route path="/preview" component={Preview} />
           <Route path="/login" component={Login} />
         </Switch>
         <Footer />
