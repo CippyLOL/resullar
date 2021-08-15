@@ -13,7 +13,7 @@ function Register() {
 
     const validationSchema = Yup.object().shape({
         username: Yup.string().required('Please enter a username'),
-        password: Yup.string().min(7).max(45).required(),
+        password: Yup.string().min(7).max(45).required('Required'),
         passwordConfirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')
     });
 
