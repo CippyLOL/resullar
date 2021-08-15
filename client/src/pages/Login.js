@@ -1,7 +1,7 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup"
-import { Grid, Container, Typography, Button, Box, PasswordField } from '@material-ui/core';
+import { Grid, Container, Typography, Button, Box } from '@material-ui/core';
 import TextFieldWrapper from '../components/formComponents/formUI/TextField';
 import ButtonWrapper from '../components/formComponents/formUI/Button';
 
@@ -55,8 +55,9 @@ function Login() {
                                     <ButtonWrapper>Login</ButtonWrapper>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <br></br>
-                                    Don't have an account? <br></br>
+                                    <Box m={3} />
+                                    Don't have an account?
+                                    <Box m={1} />
                                     <Button href="/register" variant="contained" size="medium">
                                         Register Now!
                                     </Button>

@@ -46,11 +46,11 @@ function Header() {
         paddingBottom: '10px',
     };
 
-    const register = {
-        background: '#A52A2A',
-        padding: '10px',
-        borderRadius: '10px',
-    }
+    // const register = {
+    //     background: '#A52A2A',
+    //     padding: '10px',
+    //     borderRadius: '10px',
+    // }
 
     return (
         <nav style={navStyle}>

@@ -1,13 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 import { Provider } from '../context/FormContext';
+import { withRouter } from 'react-router-dom';
 import Personal from "../components/formComponents/formSections/Personal"
 import Education from "../components/formComponents/formSections/Education"
 import Work from "../components/formComponents/formSections/Work"
 import Projects from "../components/formComponents/formSections/Projects"
 import Skills from "../components/formComponents/formSections/Skills"
 import Review from "../components/formComponents/formSections/Review"
-// import Test from "../components/formComponents/formSections/test"
+
 
 // const { Step } = Steps;
 
@@ -106,4 +107,4 @@ const UserForm = () => {
     );
 };
 
-export default UserForm;
+export default withRouter(UserForm);

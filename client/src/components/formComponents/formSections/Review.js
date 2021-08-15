@@ -3,27 +3,28 @@ import FormContext from '../../../context/FormContext';
 import { Typography, Box, Button } from '@material-ui/core';
 import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
-    // root: {
-    //     maxWidth: 500,
-    //     border: '2px solid lightgray',
-    //     margin: 10,
-    // },
+//  material ui styles
+// const useStyles = makeStyles({
+//     // root: {
+//     //     maxWidth: 500,
+//     //     border: '2px solid lightgray',
+//     //     margin: 10,
+//     // },
 
-    root: {
-        minWidth: '50 %',
-        padding: 3,
-    }
-});
+//     root: {
+//         minWidth: '50 %',
+//         padding: 3,
+//     }
+// });
 
 
 const Review = () => {
     // useContext
     const { personal, education, work, projects, skills, next, prev } = useContext(FormContext);
     // material ui styles
-    const classes = useStyles();
+    // const classes = useStyles();
 
     // const educationList = education.map(education =>
     //     <li key={education.id}>SchoolName: {education.schoolName}</li>);
