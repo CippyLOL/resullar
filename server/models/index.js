@@ -37,7 +37,17 @@ db.Sequelize = Sequelize;
 db.userdetails.hasMany(db.sections);
 db.companies.hasMany(db.sections);
 
+<<<<<<< Updated upstream
 db.sections.belongsTo(db.userdetails);
 db.sections.belongsTo(db.companies);
 
+=======
+db.userdetails.hasMany(db.logindetails);
+
+db.sections.belongsTo(db.userdetails);
+db.sections.belongsTo(db.companies);
+
+db.logindetails.belongsTo(db.userdetails);
+
+>>>>>>> Stashed changes
 module.exports = db;

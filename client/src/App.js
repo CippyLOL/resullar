@@ -7,6 +7,10 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import ResumeBuilderForm from "./pages/ResumeBuilderForm";
 import Preview from "./pages/Preview";
+<<<<<<< Updated upstream
+=======
+import UserForm from "./pages/UserForm";
+>>>>>>> Stashed changes
 import Login from "./pages/Login";
 
 
@@ -33,7 +37,12 @@ function App() {
 
         <Switch>
           <Route path="/" exact component={Home} />
+<<<<<<< Updated upstream
           <Route path="/resumebuilder" component={ResumeBuilderForm} />
+=======
+          {/* <Route path="/resumebuilder" component={ResumeBuilderForm} /> */}
+          <Route path="/userform" component={UserForm} />
+>>>>>>> Stashed changes
           <Route path="/preview" component={Preview} />
           <Route path="/login" component={Login} />
         </Switch>

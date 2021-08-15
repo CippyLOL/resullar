@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import React, { Component } from 'react';
+=======
+import React from 'react';
+>>>>>>> Stashed changes
 import axios from 'axios';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
@@ -33,8 +37,24 @@ function ResumeBuilderForm() {
     let history = useHistory();
 
     const onSubmit = (data) => {
+<<<<<<< Updated upstream
         axios.post("http://localhost:3001/resumebuilder", data).then((response) => {
             history.push("/preview");
+=======
+        axios.post("http://localhost:3001/resumebuilder", 
+        data, 
+        {
+            headers: {
+                accessToken: sessionStorage.getItem("accessToken")
+            }
+        }
+        ).then((response) => {
+            if (response.data.error) {
+                alert(response.data.error);
+            } else {
+                history.push("/preview");
+            }
+>>>>>>> Stashed changes
         });
     };
 
@@ -45,7 +65,11 @@ function ResumeBuilderForm() {
                     <Formik
                         initialValues={initialFormState}
                         validationSchema={formValidation}
+<<<<<<< Updated upstream
                         onSubmit={onSubmit} 
+=======
+                        onSubmit={onSubmit}
+>>>>>>> Stashed changes
                     >
                         <Form>
                             <Grid container spacing={2}>
