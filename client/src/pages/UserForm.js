@@ -14,7 +14,7 @@ import Review from "../components/formComponents/formSections/Review"
 
 // Intialize initial state and values for each section
 const personalInitialState = {
-    fName: "",
+    fullname: "",
     email: "",
     phone: "",
     address: "",

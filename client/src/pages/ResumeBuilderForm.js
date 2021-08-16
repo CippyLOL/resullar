@@ -1,19 +1,12 @@
-import React from 'react';
-import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
-import TextFieldWrapper from '../components/formComponents/formUI/TextField';
-import ButtonWrapper from '../components/formComponents/formUI/Button';
-import { Grid, Container, Typography } from '@material-ui/core';
-
 const initialFormState = {
-    fName: "",
+    fullname: "",
     email: "",
     phone: "",
     address: "",
 };
 
 const formValidation = Yup.object().shape({
-    fName: Yup.string().required('Required'),
+    fullname: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     phone: Yup.number().integer().typeError('Invalid phone number').required('Required'),
     address: Yup.string().required('Required'),
@@ -27,7 +20,25 @@ const resumeForm = {
     paddingBottom: '3rem',
 };
 
-function ResumeBuilderForm() {
+function ResumeBuilderForm() {  
+    let history = useHistory();
+
+    const onSubmit = (data) => {
+        axios.post("http://localhost:3001/resumebuilder", 
+        data, 
+        {
+            headers: {
+                accessToken: sessionStorage.getItem("accessToken")
+            }
+        }
+        ).then((response) => {
+            if (response.data.error) {
+                alert(response.data.error);
+            } else {
+                history.push("/preview");
+            }
+        });
+    };
     return (
         <div style={resumeForm}>
             <Container maxWidth="md">
