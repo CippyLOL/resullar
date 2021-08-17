@@ -3,6 +3,8 @@ import FormContext from '../../../context/FormContext';
 import { Typography, Box, Button } from '@material-ui/core';
 import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { PDFViewer, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import PDFRender from '../../PDFRender';
 // import { makeStyles } from '@material-ui/core/styles';
 
 //  material ui styles
@@ -18,6 +20,18 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 //         padding: 3,
 //     }
 // });
+
+const styles = StyleSheet.create({
+    page: {
+        flexDirection: 'row',
+        backgroundColor: 'white'
+    },
+    section: {
+        margin: 10,
+        padding: 10,
+        flexGrow: 1
+    }
+});
 
 
 const Review = () => {
@@ -204,9 +218,21 @@ const Review = () => {
             {/* PDF preview */}
             <Box>
                 <Typography variant="h1">
-                    PDF Review
+                    PDF Preview
                 </Typography>
 
+                <PDFViewer width="300" height="480">
+                    <Document>
+                        <Page size="A4" style={styles.page}>
+                            <View style={styles.section}>
+                                <Text>Section #1</Text>
+                            </View>
+                            <View style={styles.section}>
+                                <Text>{personal.fName}</Text>
+                            </View>
+                        </Page>
+                    </Document>
+                </PDFViewer>
 
             </Box>
 
