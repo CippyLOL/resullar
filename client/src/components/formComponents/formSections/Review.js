@@ -21,9 +21,10 @@ import PDFRender from '../../PDFRender';
 //     }
 // });
 
+//  PDP render styles
 const styles = StyleSheet.create({
     page: {
-        flexDirection: 'row',
+        flexDirection: 'column',
         backgroundColor: 'white'
     },
     section: {
@@ -225,10 +226,28 @@ const Review = () => {
                     <Document>
                         <Page size="A4" style={styles.page}>
                             <View style={styles.section}>
-                                <Text>Section #1</Text>
+                                <Text> {personal.fName} <br /></Text>
+                                <Text> {personal.email} <br /></Text>
+                                <Text> {personal.phone} <br /></Text>
+                                <Text> {personal.address} <br /></Text>
                             </View>
                             <View style={styles.section}>
-                                <Text>{personal.fName}</Text>
+                                <Text>Education</Text>
+                                {
+                                    education.education.map((education, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <Text> School: {education.schoolName}<br /></Text>
+                                                <Text> Location: {education.location} <br /></Text>
+                                                <Text> Major: {education.major} <br /></Text>
+                                                <Text> Certification: {education.certification} <br /></Text>
+                                                <Text> Start Year: {education.startYear} <br /></Text>
+                                                <Text>End Year: {education.endYear} <br /></Text>
+
+                                            </div>
+                                        )
+                                    })
+                                }
                             </View>
                         </Page>
                     </Document>

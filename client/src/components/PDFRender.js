@@ -3,6 +3,8 @@ import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import FormContext from '../context/FormContext';
 
 
+// cannot connect to review component
+
 const styles = StyleSheet.create({
     page: {
         flexDirection: 'row',
