@@ -12,12 +12,12 @@ import FormContext from '../../../context/FormContext';
 const validationSchema = Yup.object().shape({
     education: Yup.array().of(
         Yup.object().shape({
-            schoolName: Yup.string(),
-            location: Yup.string(),
-            major: Yup.string(),
-            certification: Yup.string(),
-            startYear: Yup.number().integer().typeError('Invalid year'),
-            endYear: Yup.number().integer().typeError('Invalid year'),
+            schoolName: Yup.string().required('Required'),
+            location: Yup.string().required('Required'),
+            major: Yup.string().required('Required'),
+            certification: Yup.string().required('Required'),
+            startYear: Yup.number().integer().typeError('Invalid year').required('Required'),
+            endYear: Yup.number().integer().typeError('Invalid year').required('Required'),
         })
     )
 });
@@ -54,6 +54,12 @@ export const Education = () => {
                                 <Grid item xs={12}>
                                     <Typography variant="h3">
                                         Education
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Typography variant="body1">
+                                        If section does not apply, delete the field and move to the next section. <br />
+                                        All input fields are required.
                                     </Typography>
                                 </Grid>
 

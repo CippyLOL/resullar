@@ -12,11 +12,11 @@ import FormContext from '../../../context/FormContext';
 const validationSchema = Yup.object().shape({
     projects: Yup.array().of(
         Yup.object().shape({
-            companyName: Yup.string(),
-            location: Yup.string(),
-            aboutProject: Yup.string(),
-            startYear: Yup.number().integer().typeError('Invalid year'),
-            endYear: Yup.number().integer().typeError('Invalid year'),
+            projectName: Yup.string().required('Required'),
+            location: Yup.string().required('Required'),
+            aboutProject: Yup.string().required('Required'),
+            startYear: Yup.number().integer().typeError('Invalid year').required('Required'),
+            endYear: Yup.number().integer().typeError('Invalid year').required('Required'),
         })
     )
 });
@@ -57,6 +57,12 @@ export const Projects = () => {
                                 <Grid item xs={12}>
                                     <Typography variant="h3">
                                         Projects
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Typography variant="body1">
+                                        If section does not apply, delete the field and move to the next section. <br />
+                                        All input fields are required.
                                     </Typography>
                                 </Grid>
 
