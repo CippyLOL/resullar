@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup"
-import { Grid, Container, Typography, Button, Box, PasswordField } from '@material-ui/core';
-import TextFieldWrapper from '../components/formComponents/formUI/TextField';
-import ButtonWrapper from '../components/formComponents/formUI/Button';
+// import { Formik, Form, Field, ErrorMessage } from "formik";
+// import * as Yup from "yup"
+import { Grid, Container, Typography, Button, Box, TextField } from '@material-ui/core';
+// import TextFieldWrapper from '../components/formComponents/formUI/TextField';
+// import ButtonWrapper from '../components/formComponents/formUI/Button';
 import { useHistory } from 'react-router-dom';
 
 function Login() {
+    // useState
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -64,22 +65,28 @@ function Login() {
                                 Login Information
                             </Typography>
                         </Grid>
-                        <Grid item xs={12}>
+                        {/* <Grid item xs={12}>
                             <label>Username:</label>
-                        </Grid>
+                        </Grid> */}
                         <Grid item xs={12}>
-                            <input
+                            <TextField
+                                label="Username"
+                                variant="outlined"
+                                fullWidth="true"
                                 type="text"
                                 onChange={(event) => {
                                     setUsername(event.target.value);
                                 }}
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        {/* <Grid item xs={12}>
                             <label>Password:</label>
-                        </Grid>
+                        </Grid> */}
                         <Grid item xs={12}>
-                            <input
+                            <TextField
+                                label="Password"
+                                variant="outlined"
+                                fullWidth="true"
                                 type="password"
                                 onChange={(event) => {
                                     setPassword(event.target.value);
@@ -87,18 +94,23 @@ function Login() {
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            <button onClick={login}> Login </button>
+                            <Button
+                                variant='contained'
+                                color='primary'
+                                fullWidth
+                                onClick={login}> Login </Button>
                         </Grid>
                         <Grid item xs={12}>
-                            <br></br>
-                            Don't have an account? <br></br>
+                            <Box m={2} />
+                            Don't have an account?
+                            <Box m={2} />
                             <Button href="/register" variant="contained" size="medium">
                                 Register Now!
                             </Button>
                         </Grid>
                     </Grid>
                 </Container>
-                <br></br>
+
 
             </Box>
         </div>
