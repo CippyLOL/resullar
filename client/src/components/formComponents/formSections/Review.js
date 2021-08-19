@@ -207,14 +207,11 @@ const Review = () => {
                         onClick={next}
                     >Next</Button>
                 </Box>
-
-
-
-
-
-
-
             </Box>
+
+
+
+
 
             {/* PDF preview */}
             <Box>
@@ -231,6 +228,7 @@ const Review = () => {
                                 <Text> {personal.phone} <br /></Text>
                                 <Text> {personal.address} <br /></Text>
                             </View>
+
                             <View style={styles.section}>
                                 <Text>Education</Text>
                                 {
@@ -249,6 +247,56 @@ const Review = () => {
                                     })
                                 }
                             </View>
+
+                            <View style={styles.section}>
+                                <Text>Work Experience</Text>
+                                {
+                                    work.work.map((work, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <Text>Company Name: {work.companyName}</Text>
+                                                <Text>Company Location: {work.location}</Text>
+                                                <Text>Job Role: {work.jobRole}</Text>
+                                                <Text>Start Year: {work.startYear}</Text>
+                                                <Text>End Year: {work.endYear}</Text>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </View>
+
+                            <View style={styles.section}>
+                                <Text>Projects</Text>
+                                {
+                                    projects.projects.map((projects, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <Text>Project Name: {projects.projectName}</Text>
+                                                <Text>About: {projects.aboutProject}</Text>
+                                                <Text>Start Year: {projects.startYear}</Text>
+                                                <Text>End Year: {projects.endYear}</Text>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </View>
+
+                            <View style={styles.section}>
+                                <Text>Skills</Text>
+                                {
+                                    skills.skills.map((skill, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <Text>Skills: {skills.skills}</Text>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </View>
+
+
+
+
                         </Page>
                     </Document>
                 </PDFViewer>
