@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     }
 });
 
-
 const Review = () => {
     // useContext
     const { personal, education, work, projects, skills, next, prev } = useContext(FormContext);
