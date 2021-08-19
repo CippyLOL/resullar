@@ -13,7 +13,6 @@ const validationSchema = Yup.object().shape({
     projects: Yup.array().of(
         Yup.object().shape({
             projectName: Yup.string().required('Required'),
-            location: Yup.string().required('Required'),
             aboutProject: Yup.string().required('Required'),
             startYear: Yup.number().integer().typeError('Invalid year').required('Required'),
             endYear: Yup.number().integer().typeError('Invalid year').required('Required'),
