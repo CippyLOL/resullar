@@ -295,11 +295,8 @@ const Review = () => {
                         </Page>
                     </Document>
                 </PDFViewer>
-
             </Box>
-
-
-
+            
         </Box>
     );
 }
