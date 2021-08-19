@@ -293,10 +293,6 @@ const Review = () => {
                                     })
                                 }
                             </View>
-
-
-
-
                         </Page>
                     </Document>
                 </PDFViewer>
