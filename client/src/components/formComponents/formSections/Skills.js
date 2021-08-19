@@ -18,7 +18,7 @@ import FormContext from '../../../context/FormContext';
 // });
 
 const validationSchema = Yup.object().shape({
-    skills: Yup.array().of(Yup.string())
+    skills: Yup.array().of(Yup.string().required('Required'))
 });
 
 const resumeForm = {
@@ -60,6 +60,13 @@ export const Skills = () => {
                                     </Typography>
                                 </Grid>
 
+                                <Grid item xs={12}>
+                                    <Typography variant="body1">
+                                        If section does not apply, delete the field and move to the next section. <br />
+                                        All input fields are required.
+                                    </Typography>
+                                </Grid>
+
                                 <FieldArray
                                     name="skills"
                                     render={arrayHelpers => (
@@ -88,7 +95,7 @@ export const Skills = () => {
                                                         <Grid item xs={8}>
                                                             <TextFieldWrapper
                                                                 name={`skills.[${index}]`}
-                                                                label="Project Name"
+                                                                label="Skill"
                                                             />
                                                         </Grid>
                                                         <Grid item xs>
