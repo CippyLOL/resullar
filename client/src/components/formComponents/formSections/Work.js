@@ -114,7 +114,7 @@ export const Work = () => {
                                                             <TextFieldWrapper
                                                                 multiline rows={10}
                                                                 name={`work.${index}.jobRole`}
-                                                                label="Job Role"
+                                                                label="Job Role and Responsibilities"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={6}>
