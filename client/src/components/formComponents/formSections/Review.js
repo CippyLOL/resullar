@@ -48,7 +48,10 @@ const styles = StyleSheet.create({
     },
     header: { 
         fontSize: 24 ,
-        color:'#191970'
+        color:'#191970',
+        borderBottomWidth: 0.5,
+        borderBottomColor: '#112131',
+        borderBottomStyle: 'dotted',
     },
 });
 
