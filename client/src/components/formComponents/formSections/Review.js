@@ -280,7 +280,7 @@ const Review = () => {
                                                     <Text> {work.companyName}</Text>
                                                     <Text> {work.location}</Text>
                                                 </View>
-                                                <Text>Responsibilities - {work.jobRole}</Text>
+                                                <Text>Responsibilities: {work.jobRole}</Text>
                                                 <Text> {work.startYear} - {work.endYear}</Text>
                                             </div>
                                         )
