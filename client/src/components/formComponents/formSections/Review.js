@@ -43,8 +43,13 @@ const styles = StyleSheet.create({
         borderBottomStyle: 'solid',
         paddingBottom: '10px'
     },
-    name: { fontSize: 30 },
-    header: { fontSize: 24 },
+    name: { 
+        fontSize: 30
+    },
+    header: { 
+        fontSize: 24 ,
+        color:'#191970'
+    },
 });
 
 const Review = () => {
@@ -192,7 +197,7 @@ const Review = () => {
                                 return (
                                     <div key={index}>
                                         <Typography variant="body1">
-                                            {index + 1}. {skill}
+                                            {index + 1}:{skill}
                                         </Typography>
                                     </div>
                                 )
@@ -305,7 +310,7 @@ const Review = () => {
                                     skills.skills.map((skill, index) => {
                                         return (
                                             <div key={index}>
-                                                <Text>· {skills.skills}</Text>
+                                                <Text>· {skill}</Text>
                                             </div>
                                         )
                                     })
