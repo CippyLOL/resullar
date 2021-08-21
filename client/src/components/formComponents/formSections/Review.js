@@ -28,10 +28,23 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     section: {
-        margin: 10,
-        padding: 10,
+        margin: 5,
+        padding: 5,
         flexGrow: 1
-    }
+    },
+    sectionHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    personal: {
+        textAlign: 'center',
+        borderBottomWidth: 2,
+        borderBottomColor: '#112131',
+        borderBottomStyle: 'solid',
+        paddingBottom: '10px'
+    },
+    name: { fontSize: 30 },
+    header: { fontSize: 24 },
 });
 
 const Review = () => {
@@ -46,12 +59,12 @@ const Review = () => {
     console.log(education)
 
     return (
-        <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1} minWidth="80vh">
+        <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1} >
 
             {/* <Box> */}
 
             {/* Review Results */}
-            <Box display="flex" flexDirection="column">
+            <Box display="flex" flexDirection="column" maxWidth="90vh">
                 <Typography variant="h1">
                     Review
                 </Typography>
@@ -179,7 +192,7 @@ const Review = () => {
                                 return (
                                     <div key={index}>
                                         <Typography variant="body1">
-                                            Skill {index + 1}: {skill} <br />
+                                            {index + 1}. {skill}
                                         </Typography>
                                     </div>
                                 )
@@ -222,25 +235,27 @@ const Review = () => {
                     <Document>
                         <Page size="A4" style={styles.page}>
                             <View style={styles.section}>
-                                <Text> {personal.fName} <br /></Text>
-                                <Text> {personal.email} <br /></Text>
-                                <Text> {personal.phone} <br /></Text>
-                                <Text> {personal.address} <br /></Text>
+                                <View style={styles.personal}>
+                                    <Text style={styles.name}> {personal.fName} <br /></Text>
+                                    <Text> {personal.phone} | {personal.address} | {personal.email}</Text>
+                                </View>
+
                             </View>
 
                             <View style={styles.section}>
-                                <Text>Education</Text>
+                                <Text style={styles.header}>Education</Text>
                                 {
                                     education.education.map((education, index) => {
                                         return (
                                             <div key={index}>
-                                                <Text> School: {education.schoolName}<br /></Text>
-                                                <Text> Location: {education.location} <br /></Text>
-                                                <Text> Major: {education.major} <br /></Text>
-                                                <Text> Certification: {education.certification} <br /></Text>
-                                                <Text> Start Year: {education.startYear} <br /></Text>
-                                                <Text>End Year: {education.endYear} <br /></Text>
-
+                                                <View style={styles.sectionHeader}>
+                                                    <Text> {education.schoolName}<br /></Text>
+                                                    <Text> {education.location} <br /></Text>
+                                                </View>
+                                                <View style={styles.sectionHeader}>
+                                                    <Text> {education.major} | {education.certification} <br /></Text>
+                                                    <Text> {education.startYear} - {education.endYear} </Text>
+                                                </View>
                                             </div>
                                         )
                                     })
@@ -248,16 +263,17 @@ const Review = () => {
                             </View>
 
                             <View style={styles.section}>
-                                <Text>Work Experience</Text>
+                                <Text style={styles.header}>Work Experience</Text>
                                 {
                                     work.work.map((work, index) => {
                                         return (
                                             <div key={index}>
-                                                <Text>Company Name: {work.companyName}</Text>
-                                                <Text>Company Location: {work.location}</Text>
-                                                <Text>Job Role: {work.jobRole}</Text>
-                                                <Text>Start Year: {work.startYear}</Text>
-                                                <Text>End Year: {work.endYear}</Text>
+                                                <View style={styles.sectionHeader}>
+                                                    <Text> {work.companyName}</Text>
+                                                    <Text> {work.location}</Text>
+                                                </View>
+                                                <Text>Responsibilities - {work.jobRole}</Text>
+                                                <Text> {work.startYear} - {work.endYear}</Text>
                                             </div>
                                         )
                                     })
@@ -265,15 +281,18 @@ const Review = () => {
                             </View>
 
                             <View style={styles.section}>
-                                <Text>Projects</Text>
+                                <Text style={styles.header}>Projects</Text>
                                 {
                                     projects.projects.map((projects, index) => {
                                         return (
                                             <div key={index}>
-                                                <Text>Project Name: {projects.projectName}</Text>
-                                                <Text>About: {projects.aboutProject}</Text>
-                                                <Text>Start Year: {projects.startYear}</Text>
-                                                <Text>End Year: {projects.endYear}</Text>
+                                                <View style={styles.sectionHeader}>
+                                                    <Text> {projects.projectName}</Text>
+                                                    <Text> {projects.startYear} - {projects.endYear}</Text>
+                                                </View>
+
+                                                <Text>Description: {projects.aboutProject}</Text>
+
                                             </div>
                                         )
                                     })
@@ -281,12 +300,12 @@ const Review = () => {
                             </View>
 
                             <View style={styles.section}>
-                                <Text>Skills</Text>
+                                <Text style={styles.header} >Skills</Text>
                                 {
                                     skills.skills.map((skill, index) => {
                                         return (
                                             <div key={index}>
-                                                <Text>Skills: {skills.skills}</Text>
+                                                <Text>· {skills.skills}</Text>
                                             </div>
                                         )
                                     })
@@ -296,7 +315,7 @@ const Review = () => {
                     </Document>
                 </PDFViewer>
             </Box>
-            
+
         </Box>
     );
 }
