@@ -4,6 +4,7 @@ import resullarLogoWhite from '../images/resullarLogoWhite.svg'
 import { AuthContext } from "../context/AuthContext.js";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function Header() {
 
@@ -60,7 +61,9 @@ function Header() {
     status: false,
   });
 
-  let id = 1;
+  let id = 0;
+
+  let history = useHistory();
 
   useEffect(() => {
     axios
@@ -78,12 +81,7 @@ function Header() {
             id: response.data.id,
             status: true,
           });
-          const { verify } = require("jsonwebtoken");
 
-          const accessToken = localStorage.getItem("accessToken");
-          const validToken = verify(accessToken, "important");
-        
-          id = validToken.id;
         }
       });
   }, []);
@@ -92,7 +90,18 @@ function Header() {
     localStorage.removeItem("accessToken");
     setAuthState({ username: "", id: 0, status: false });
     window.location.reload();
+    history.push("/");
   };
+
+  if (localStorage.getItem("accessToken") != null)
+  {
+    const { verify } = require("jsonwebtoken");
+
+    const accessToken = localStorage.getItem("accessToken");
+    const validToken = verify(accessToken, "important");
+  
+    id = validToken.id;
+  }
 
 
 
