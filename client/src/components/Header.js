@@ -103,8 +103,6 @@ function Header() {
     id = validToken.id;
   }
 
-
-
   return (
     <div className="App">
       <AuthContext.Provider value={{ authState, setAuthState }}>

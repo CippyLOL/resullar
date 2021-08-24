@@ -3,7 +3,8 @@ import FormContext from '../../../context/FormContext';
 import { Typography, Box, Button } from '@material-ui/core';
 import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
+import { PDFViewer, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import PDFRender from '../../PDFRender';
 // import { makeStyles } from '@material-ui/core/styles';
 
 //  material ui styles
@@ -20,6 +21,39 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 //     }
 // });
 
+//  PDP render styles
+const styles = StyleSheet.create({
+    page: {
+        flexDirection: 'column',
+        backgroundColor: 'white'
+    },
+    section: {
+        margin: 5,
+        padding: 5,
+        flexGrow: 1
+    },
+    sectionHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    personal: {
+        textAlign: 'center',
+        borderBottomWidth: 2,
+        borderBottomColor: '#112131',
+        borderBottomStyle: 'solid',
+        paddingBottom: '10px'
+    },
+    name: { 
+        fontSize: 30
+    },
+    header: { 
+        fontSize: 24 ,
+        color:'#191970',
+        borderBottomWidth: 0.5,
+        borderBottomColor: '#112131',
+        borderBottomStyle: 'dotted',
+    },
+});
 
 const Review = () => {
     // useContext
@@ -30,15 +64,15 @@ const Review = () => {
     // const educationList = education.map(education =>
     //     <li key={education.id}>SchoolName: {education.schoolName}</li>);
 
-    // console.log(education)
+    console.log(education)
 
     return (
-        <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1} minWidth="80vh">
+        <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1} >
 
             {/* <Box> */}
 
             {/* Review Results */}
-            <Box display="flex" flexDirection="column">
+            <Box display="flex" flexDirection="column" maxWidth="90vh">
                 <Typography variant="h1">
                     Review
                 </Typography>
@@ -140,7 +174,7 @@ const Review = () => {
                                         </Typography>
                                         <Typography variant="body1">
                                             Project Name: {projects.projectname} <br />
-                                            {/* Location: {projects.location} <br /> */}
+                                            Location: {projects.location} <br />
                                             About Project: {projects.aboutproject} <br />
                                             Start Year: {projects.startyear} <br />
                                             End Year: {projects.endyear} <br />
@@ -166,7 +200,7 @@ const Review = () => {
                                 return (
                                     <div key={index}>
                                         <Typography variant="body1">
-                                            Skill {index + 1}: {skills.skillset} <br />
+                                        Skill {index + 1}: {skills.skillset} <br />
                                         </Typography>
                                     </div>
                                 )
@@ -193,25 +227,102 @@ const Review = () => {
                         onClick={next}
                     >Next</Button>
                 </Box>
-
-
-
-
-
-
-
             </Box>
+
+
+
+
 
             {/* PDF preview */}
             <Box>
                 <Typography variant="h1">
-                    PDF Review
+                    PDF Preview
                 </Typography>
 
+                <PDFViewer width="300" height="480">
+                    <Document>
+                        <Page size="A4" style={styles.page}>
+                            <View style={styles.section}>
+                                <View style={styles.personal}>
+                                    <Text style={styles.name}> {personal.fullname} <br /></Text>
+                                    <Text> {personal.phone} | {personal.address} | {personal.email}</Text>
+                                </View>
 
+                            </View>
+
+                            <View style={styles.section}>
+                                <Text style={styles.header}>Education</Text>
+                                {
+                                    education.education.map((education, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <View style={styles.sectionHeader}>
+                                                    <Text> {education.schoolname}<br /></Text>
+                                                    <Text> {education.location} <br /></Text>
+                                                </View>
+                                                <View style={styles.sectionHeader}>
+                                                    <Text> {education.major} | {education.certification} <br /></Text>
+                                                    <Text> {education.startyear} - {education.endyear} </Text>
+                                                </View>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </View>
+
+                            <View style={styles.section}>
+                                <Text style={styles.header}>Work Experience</Text>
+                                {
+                                    work.work.map((work, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <View style={styles.sectionHeader}>
+                                                    <Text> {work.companyname}</Text>
+                                                    <Text> {work.location}</Text>
+                                                </View>
+                                                <Text>Responsibilities: {work.jobrole}</Text>
+                                                <Text> {work.startyear} - {work.endyear}</Text>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </View>
+
+                            <View style={styles.section}>
+                                <Text style={styles.header}>Projects</Text>
+                                {
+                                    projects.projects.map((projects, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <View style={styles.sectionHeader}>
+                                                    <Text> {projects.projectname}</Text>
+                                                    <Text> {projects.startyear} - {projects.endyear}</Text>
+                                                </View>
+
+                                                <Text>Description: {projects.aboutproject}</Text>
+
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </View>
+
+                            <View style={styles.section}>
+                                <Text style={styles.header} >Skills</Text>
+                                {
+                                    skills.skills.map((skills, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <Text>· {skills.skillset}</Text>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </View>
+                        </Page>
+                    </Document>
+                </PDFViewer>
             </Box>
-
-
 
         </Box>
     );
