@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import TextFieldWrapper from '../formUI/TextField';
@@ -6,15 +7,8 @@ import ButtonWrapper from '../formUI/Button';
 import { Grid, Container, Typography } from '@material-ui/core';
 import FormContext from '../../../context/FormContext';
 
-// const initialFormState = {
-//     fName: "",
-//     email: "",
-//     phone: "",
-//     address: "",
-// };
-
-const formValidation = Yup.object().shape({
-    fName: Yup.string().required('Required'),
+const validationSchema = Yup.object().shape({
+    fullname: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     phone: Yup.number().integer().typeError('Invalid phone number').required('Required'),
     address: Yup.string().required('Required'),
@@ -28,8 +22,7 @@ const resumeForm = {
     paddingBottom: '3rem',
 };
 
-
-const Personal = () => {
+export const Personal = () => {
 
     // useContext
     const { personal, setPersonal, next } = useContext(FormContext);
@@ -40,10 +33,9 @@ const Personal = () => {
                 <div className="formWrapper">
                     <Formik
                         initialValues={personal}
-                        validationSchema={formValidation}
+                        validationSchema={validationSchema}
                         onSubmit={(values) => {
                             setPersonal(values);
-                            console.log(Personal);
                             next();
                         }}
                     >
@@ -56,7 +48,7 @@ const Personal = () => {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <TextFieldWrapper
-                                        name="fName"
+                                        name="fullname"
                                         label="Full Name"
                                     />
                                 </Grid>

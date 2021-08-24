@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-// test
-=======
 const express = require('express');
 const app = express();
 const cors = require("cors");
@@ -29,4 +26,3 @@ db.sequelize.sync().then(() => {
     });
 });
 
->>>>>>> Stashed changes

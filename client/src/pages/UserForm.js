@@ -8,7 +8,7 @@ import Work from "../components/formComponents/formSections/Work"
 import Projects from "../components/formComponents/formSections/Projects"
 import Skills from "../components/formComponents/formSections/Skills"
 import Review from "../components/formComponents/formSections/Review"
-
+import axios from 'axios';
 
 
 // Intialize initial state and values for each section
@@ -53,7 +53,6 @@ const skillsInitialState = {
     skills: [""]
 };
 
-
 const renderStep = (step) => {
     switch (step) {
         case 0:
@@ -83,8 +82,6 @@ const UserForm = () => {
     const [skills, setSkills] = useState(skillsInitialState);
     const [currentStep, setCurrentStep] = useState(0);
 
-<<<<<<< Updated upstream
-=======
     const {verify} = require("jsonwebtoken");
 
     const accessToken = localStorage.getItem("accessToken");
@@ -100,13 +97,10 @@ const UserForm = () => {
 
     let history = useHistory();
 
->>>>>>> Stashed changes
     const next = () => {
         let id = validToken.id;
 
         if (currentStep === 5) {
-<<<<<<< Updated upstream
-=======
             axios.post("http://localhost:3001/userdetails/" + id, userdata).then((response) => {
                 console.log("inserted");
             });
@@ -135,21 +129,18 @@ const UserForm = () => {
                 });
             });
 
->>>>>>> Stashed changes
             setCurrentStep(0);
             setPersonal(personalInitialState);
             setEducation(educationInitialState);
             setWork(workInitialState);
             setProjects(projectsInitialState);
             setSkills(skillsInitialState);
-<<<<<<< Updated upstream
-=======
             window.location.reload();
             history.push("/preview/" + id);
 
->>>>>>> Stashed changes
             return;
         }
+
         setCurrentStep(currentStep + 1);
         
     };

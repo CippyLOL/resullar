@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import { Formik, Form, FieldArray } from 'formik';
 import * as Yup from 'yup';
 import TextFieldWrapper from '../formUI/TextField';
@@ -107,13 +108,8 @@ export const Work = () => {
                                                         <Grid item xs={12}>
                                                             <TextFieldWrapper
                                                                 multiline rows={10}
-<<<<<<< Updated upstream
-                                                                name={`work.${index}.jobRole`}
-                                                                label="Job Role and Responsibilities"
-=======
                                                                 name={`work.${index}.jobrole`}
                                                                 label="Job Role"
->>>>>>> Stashed changes
                                                             />
                                                         </Grid>
                                                         <Grid item xs={6}>

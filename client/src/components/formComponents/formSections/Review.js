@@ -139,19 +139,11 @@ const Review = () => {
                                             Project {index + 1}
                                         </Typography>
                                         <Typography variant="body1">
-<<<<<<< Updated upstream
-                                            Project Name: {projects.projectName} <br />
-                                            Location: {projects.location} <br />
-                                            About Project: {projects.aboutProject} <br />
-                                            Start Year: {projects.startYear} <br />
-                                            End Year: {projects.endYear} <br />
-=======
                                             Project Name: {projects.projectname} <br />
                                             {/* Location: {projects.location} <br /> */}
                                             About Project: {projects.aboutproject} <br />
                                             Start Year: {projects.startyear} <br />
                                             End Year: {projects.endyear} <br />
->>>>>>> Stashed changes
                                         </Typography>
                                     </div>
                                 )

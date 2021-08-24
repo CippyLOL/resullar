@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import { Formik, Form, FieldArray } from 'formik';
 import * as Yup from 'yup';
 import TextFieldWrapper from '../formUI/TextField';
@@ -6,7 +7,6 @@ import ButtonWrapper from '../formUI/Button';
 import { Button } from '@material-ui/core';
 import { Grid, Container, Typography, Box } from '@material-ui/core';
 import FormContext from '../../../context/FormContext';
-
 
 // ARRAY
 const validationSchema = Yup.object().shape({
@@ -32,9 +32,9 @@ const resumeForm = {
 };
 
 
-
 export const Education = () => {
     const { education, setEducation, next, prev } = useContext(FormContext);
+    
     return (
         <div style={resumeForm}>
             <Container maxWidth="md">
@@ -43,9 +43,7 @@ export const Education = () => {
                     validationSchema={validationSchema}
                     onSubmit={(values) => {
                         setEducation(values);
-                        console.log(education);
                         next();
-                        // prev();
                     }}
                     render={({ values }) => (
                         <Form>

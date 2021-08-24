@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import { Formik, Form, FieldArray } from 'formik';
 import * as Yup from 'yup';
 import TextFieldWrapper from '../formUI/TextField';
@@ -46,7 +47,6 @@ export const Projects = () => {
                     validationSchema={validationSchema}
                     onSubmit={(values) => {
                         setProjects(values);
-                        console.log(projects);
                         next();
                         // prev();
                     }}
