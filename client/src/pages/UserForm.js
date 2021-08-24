@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Provider } from '../context/FormContext';
-import { withRouter } from 'react-router-dom';
+import { withRouter, useParams, useHistory } from 'react-router-dom';
 import Personal from "../components/formComponents/formSections/Personal"
 import Education from "../components/formComponents/formSections/Education"
 import Work from "../components/formComponents/formSections/Work"
@@ -10,11 +10,10 @@ import Skills from "../components/formComponents/formSections/Skills"
 import Review from "../components/formComponents/formSections/Review"
 
 
-// const { Step } = Steps;
 
 // Intialize initial state and values for each section
 const personalInitialState = {
-    fName: "",
+    fullname: "",
     email: "",
     phone: "",
     address: "",
@@ -23,7 +22,7 @@ const personalInitialState = {
 const educationInitialState = {
     education: [
         {
-            schoolName: "", location: "", major: "", certification: "", startYear: "", endYear: "",
+            schoolname: "", location: "", major: "", certification: "", startyear: "", endyear: "",
         },
 
 
@@ -33,7 +32,7 @@ const educationInitialState = {
 const workInitialState = {
     work: [
         {
-            companyName: "", location: "", jobRole: "", startYear: "", endYear: "",
+            companyname: "", location: "", jobrole: "", startyear: "", endyear: "",
         },
 
 
@@ -43,7 +42,7 @@ const workInitialState = {
 const projectsInitialState = {
     projects: [
         {
-            projectName: "", aboutProject: "", startYear: "", endYear: "",
+            projectname: "", aboutproject: "", startyear: "", endyear: "",
         },
 
 
@@ -84,17 +83,75 @@ const UserForm = () => {
     const [skills, setSkills] = useState(skillsInitialState);
     const [currentStep, setCurrentStep] = useState(0);
 
+<<<<<<< Updated upstream
+=======
+    const {verify} = require("jsonwebtoken");
+
+    const accessToken = localStorage.getItem("accessToken");
+    const validToken = verify(accessToken, "important");
+
+
+    let userdata = {
+        fullname: personal.fullname,
+        email: personal.email,
+        phone: personal.phone,
+        address: personal.address
+    };
+
+    let history = useHistory();
+
+>>>>>>> Stashed changes
     const next = () => {
+        let id = validToken.id;
+
         if (currentStep === 5) {
+<<<<<<< Updated upstream
+=======
+            axios.post("http://localhost:3001/userdetails/" + id, userdata).then((response) => {
+                console.log("inserted");
+            });
+
+            education.education.forEach(function (schooldata, index) {
+                axios.post("http://localhost:3001/schools/" + id, schooldata).then((response) => {
+                    console.log("inserted");
+                });
+            });
+
+            work.work.forEach(function (workdata, index) {
+                axios.post("http://localhost:3001/companies/" + id, workdata).then((response) => {
+                    console.log("inserted");
+                });
+            });
+
+            projects.projects.forEach(function (projectdata, index) {
+                axios.post("http://localhost:3001/projects/" + id, projectdata).then((response) => {
+                    console.log("inserted");
+                });
+            });
+
+            skills.skills.forEach(function (skilldata, index) {
+                axios.post("http://localhost:3001/skills/" + id, skilldata).then((response) => {
+                    console.log(skilldata);
+                });
+            });
+
+>>>>>>> Stashed changes
             setCurrentStep(0);
             setPersonal(personalInitialState);
             setEducation(educationInitialState);
             setWork(workInitialState);
             setProjects(projectsInitialState);
             setSkills(skillsInitialState);
+<<<<<<< Updated upstream
+=======
+            window.location.reload();
+            history.push("/preview/" + id);
+
+>>>>>>> Stashed changes
             return;
         }
         setCurrentStep(currentStep + 1);
+        
     };
     const prev = () => setCurrentStep(currentStep - 1);
 

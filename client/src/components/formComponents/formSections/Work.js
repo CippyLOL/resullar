@@ -12,11 +12,11 @@ import FormContext from '../../../context/FormContext';
 const validationSchema = Yup.object().shape({
     work: Yup.array().of(
         Yup.object().shape({
-            companyName: Yup.string().required('Required'),
-            location: Yup.string().required('Required'),
-            jobRole: Yup.string().required('Required'),
-            startYear: Yup.number().integer().typeError('Invalid year').required('Required'),
-            endYear: Yup.number().integer().typeError('Invalid year').required('Required'),
+            companyname: Yup.string(),
+            location: Yup.string(),
+            jobrole: Yup.string(),
+            startyear: Yup.number().integer().typeError('Invalid year'),
+            endyear: Yup.number().integer().typeError('Invalid year'),
         })
     )
 });
@@ -59,12 +59,6 @@ export const Work = () => {
                                         Work Experience
                                     </Typography>
                                 </Grid>
-                                <Grid item xs={12}>
-                                    <Typography variant="body1">
-                                        If section does not apply, delete the field and move to the next section. <br />
-                                        All input fields are required.
-                                    </Typography>
-                                </Grid>
 
                                 <FieldArray
                                     name="work"
@@ -75,7 +69,7 @@ export const Work = () => {
                                                 fullWidth
                                                 variant='contained'
                                                 style={{ width: '15em', marginTop: '1em', marginBottom: '2em' }}
-                                                onClick={() => arrayHelpers.push({ companyName: "", location: "", jobRole: "", startYear: "", endYear: "", })}
+                                                onClick={() => arrayHelpers.push({ companyname: "", location: "", jobrole: "", startyear: "", endyear: "", })}
                                             >
                                                 Add Work
                                             </Button>
@@ -100,7 +94,7 @@ export const Work = () => {
                                                         </Grid>
                                                         <Grid item xs={12}>
                                                             <TextFieldWrapper
-                                                                name={`work.${index}.companyName`}
+                                                                name={`work.${index}.companyname`}
                                                                 label="Company Name"
                                                             />
                                                         </Grid>
@@ -113,19 +107,24 @@ export const Work = () => {
                                                         <Grid item xs={12}>
                                                             <TextFieldWrapper
                                                                 multiline rows={10}
+<<<<<<< Updated upstream
                                                                 name={`work.${index}.jobRole`}
                                                                 label="Job Role and Responsibilities"
+=======
+                                                                name={`work.${index}.jobrole`}
+                                                                label="Job Role"
+>>>>>>> Stashed changes
                                                             />
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`work.${index}.startYear`}
+                                                                name={`work.${index}.startyear`}
                                                                 label="Start Year"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`work.${index}.endYear`}
+                                                                name={`work.${index}.endyear`}
                                                                 label="End Year"
                                                             />
                                                         </Grid>

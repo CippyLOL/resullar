@@ -9,17 +9,17 @@ import FormContext from '../../../context/FormContext';
 
 
 // // ARRAY
-// const validationSchema = Yup.object().shape({
-//     skills: Yup.array().of(
-//         Yup.object().shape({
-//             skills: Yup.string(),
-//         })
-//     )
-// });
-
 const validationSchema = Yup.object().shape({
-    skills: Yup.array().of(Yup.string().required('Required'))
+    skills: Yup.array().of(
+        Yup.object().shape({
+            skillset: Yup.string(),
+        })
+    )
 });
+
+// const validationSchema = Yup.object().shape({
+//     skills: Yup.array().of(Yup.string())
+// });
 
 const resumeForm = {
     minHeight: '80vh',
@@ -46,7 +46,6 @@ export const Skills = () => {
                     validationSchema={validationSchema}
                     onSubmit={(values) => {
                         setSkills(values);
-                        console.log(skills);
                         next();
                         // prev();
                     }}
@@ -60,13 +59,6 @@ export const Skills = () => {
                                     </Typography>
                                 </Grid>
 
-                                <Grid item xs={12}>
-                                    <Typography variant="body1">
-                                        If section does not apply, delete the field and move to the next section. <br />
-                                        All input fields are required.
-                                    </Typography>
-                                </Grid>
-
                                 <FieldArray
                                     name="skills"
                                     render={arrayHelpers => (
@@ -76,7 +68,7 @@ export const Skills = () => {
                                                 fullWidth
                                                 variant='contained'
                                                 style={{ width: '15em', marginTop: '1em', marginBottom: '2em' }}
-                                                onClick={() => arrayHelpers.push('')}
+                                                onClick={() => arrayHelpers.push({ skillset: ""})}
                                             >
                                                 Add Skill
                                             </Button>
@@ -94,7 +86,7 @@ export const Skills = () => {
 
                                                         <Grid item xs={8}>
                                                             <TextFieldWrapper
-                                                                name={`skills.[${index}]`}
+                                                                name={`skills.${index}.skillset`}
                                                                 label="Skill"
                                                             />
                                                         </Grid>

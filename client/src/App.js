@@ -9,17 +9,16 @@ import Home from './pages/Home';
 import UserForm from "./pages/UserForm";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Preview from "./pages/Preview";
 import NotFound from "./pages/NotFound";
-
 
 function App() {
 
-  // useState for isAuth bool, DEFAULT: FALSE
-  // setIsAuth should be changed when user is logged in and authenticated
   const [isAuth, setIsAuth] = useState(true);
 
 
   return (
+    
     <Router>
       <div className="App">
         <Header />
@@ -30,10 +29,11 @@ function App() {
           {/* <Route path="/userform" component={UserForm} /> */}
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/preview/:id" component={Preview} />
           {/* all routes that explicitly defined will be sent to the 404 page */}
           {/* <Route path="*" component={NotFound} /> */}
           {/* Protected route to authenticate the user before using the form  */}
-          <ProtectedRoute path="/userform" component={UserForm} isAuth={isAuth} />
+          <ProtectedRoute path="/userform" component={UserForm} isAuth={isAuth}/>
         </Switch>
         <Footer />
       </div>

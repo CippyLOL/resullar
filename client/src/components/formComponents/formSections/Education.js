@@ -12,12 +12,12 @@ import FormContext from '../../../context/FormContext';
 const validationSchema = Yup.object().shape({
     education: Yup.array().of(
         Yup.object().shape({
-            schoolName: Yup.string().required('Required'),
-            location: Yup.string().required('Required'),
-            major: Yup.string().required('Required'),
-            certification: Yup.string().required('Required'),
-            startYear: Yup.number().integer().typeError('Invalid year').required('Required'),
-            endYear: Yup.number().integer().typeError('Invalid year').required('Required'),
+            schoolname: Yup.string(),
+            location: Yup.string(),
+            major: Yup.string(),
+            certification: Yup.string(),
+            startyear: Yup.number().integer().typeError('Invalid year'),
+            endyear: Yup.number().integer().typeError('Invalid year'),
         })
     )
 });
@@ -56,12 +56,6 @@ export const Education = () => {
                                         Education
                                     </Typography>
                                 </Grid>
-                                <Grid item xs={12}>
-                                    <Typography variant="body1">
-                                        If section does not apply, delete the field and move to the next section. <br />
-                                        All input fields are required.
-                                    </Typography>
-                                </Grid>
 
                                 <FieldArray
                                     name="education"
@@ -72,7 +66,7 @@ export const Education = () => {
                                                 fullWidth
                                                 variant='contained'
                                                 style={{ width: '15em', marginTop: '1em', marginBottom: '2em' }}
-                                                onClick={() => arrayHelpers.push({ schoolName: "", location: "", major: "", certification: "", startYear: "", endYear: "", })}
+                                                onClick={() => arrayHelpers.push({ schoolname: "", location: "", major: "", certification: "", startyear: "", endyear: "", })}
                                             >
                                                 Add Education
                                             </Button>
@@ -97,7 +91,7 @@ export const Education = () => {
                                                         </Grid>
                                                         <Grid item xs={12}>
                                                             <TextFieldWrapper
-                                                                name={`education.${index}.schoolName`}
+                                                                name={`education.${index}.schoolname`}
                                                                 label="School Name"
                                                             />
                                                         </Grid>
@@ -121,13 +115,13 @@ export const Education = () => {
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`education.${index}.startYear`}
+                                                                name={`education.${index}.startyear`}
                                                                 label="Start Year"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`education.${index}.endYear`}
+                                                                name={`education.${index}.endyear`}
                                                                 label="End Year"
                                                             />
                                                         </Grid>

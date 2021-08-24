@@ -3,32 +3,34 @@ import FormContext from '../../../context/FormContext';
 import { Typography, Box, Button } from '@material-ui/core';
 import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
-    // root: {
-    //     maxWidth: 500,
-    //     border: '2px solid lightgray',
-    //     margin: 10,
-    // },
+// import { makeStyles } from '@material-ui/core/styles';
 
-    root: {
-        minWidth: '50 %',
-        padding: 3,
-    }
-});
+//  material ui styles
+// const useStyles = makeStyles({
+//     // root: {
+//     //     maxWidth: 500,
+//     //     border: '2px solid lightgray',
+//     //     margin: 10,
+//     // },
+
+//     root: {
+//         minWidth: '50 %',
+//         padding: 3,
+//     }
+// });
 
 
 const Review = () => {
     // useContext
     const { personal, education, work, projects, skills, next, prev } = useContext(FormContext);
     // material ui styles
-    const classes = useStyles();
+    // const classes = useStyles();
 
     // const educationList = education.map(education =>
     //     <li key={education.id}>SchoolName: {education.schoolName}</li>);
 
-    console.log(education)
+    // console.log(education)
 
     return (
         <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1} minWidth="80vh">
@@ -51,7 +53,7 @@ const Review = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography variant="body1">
-                            Name: {personal.fName} <br />
+                            Name: {personal.fullname} <br />
                             Email: {personal.email} <br />
                             Phone: {personal.phone} <br />
                             Address: {personal.address}
@@ -75,12 +77,12 @@ const Review = () => {
                                             Education {index + 1}
                                         </Typography>
                                         <Typography variant="body1">
-                                            School: {education.schoolName} <br />
+                                            School: {education.schoolname} <br />
                                             Location: {education.location} <br />
                                             Major: {education.major} <br />
                                             Certification: {education.certification} <br />
-                                            Start Year: {education.startYear} <br />
-                                            End Year: {education.endYear} <br />
+                                            Start Year: {education.startyear} <br />
+                                            End Year: {education.endyear} <br />
                                         </Typography>
 
                                     </div>
@@ -107,11 +109,11 @@ const Review = () => {
                                             Work {index + 1}
                                         </Typography>
                                         <Typography variant="body1">
-                                            Company: {work.companyName} <br />
+                                            Company: {work.companyname} <br />
                                             Location: {work.location} <br />
-                                            Job Responsibility: {work.jobRole} <br />
-                                            Start Year: {work.startYear} <br />
-                                            End Year: {work.endYear} <br />
+                                            Job Responsibility: {work.jobrole} <br />
+                                            Start Year: {work.startyear} <br />
+                                            End Year: {work.endyear} <br />
                                         </Typography>
                                     </div>
                                 )
@@ -137,11 +139,19 @@ const Review = () => {
                                             Project {index + 1}
                                         </Typography>
                                         <Typography variant="body1">
+<<<<<<< Updated upstream
                                             Project Name: {projects.projectName} <br />
                                             Location: {projects.location} <br />
                                             About Project: {projects.aboutProject} <br />
                                             Start Year: {projects.startYear} <br />
                                             End Year: {projects.endYear} <br />
+=======
+                                            Project Name: {projects.projectname} <br />
+                                            {/* Location: {projects.location} <br /> */}
+                                            About Project: {projects.aboutproject} <br />
+                                            Start Year: {projects.startyear} <br />
+                                            End Year: {projects.endyear} <br />
+>>>>>>> Stashed changes
                                         </Typography>
                                     </div>
                                 )
@@ -160,11 +170,11 @@ const Review = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                         {
-                            skills.skills.map((skill, index) => {
+                            skills.skills.map((skills, index) => {
                                 return (
                                     <div key={index}>
                                         <Typography variant="body1">
-                                            Skill {index + 1}: {skill} <br />
+                                            Skill {index + 1}: {skills.skillset} <br />
                                         </Typography>
                                     </div>
                                 )
