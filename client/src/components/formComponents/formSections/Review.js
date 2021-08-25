@@ -282,9 +282,16 @@ const Review = () => {
 
                             <View style={styles.section}>
                                 <Text style={styles.header}>Work Experience</Text>
-                                {/* <Typography><WorkIcon /></Typography>
+
+                                {/*
+                                <Image
+                                src="../../../images/resume.jpg"
+                                />
+                                 <Typography><WorkIcon /></Typography>
                                 <Text><WorkIcon /></Text>
-                                <Text><Typography><WorkIcon /></Typography></Text> */}
+                                <Text><Typography><WorkIcon /></Typography></Text> 
+                                */}
+                                
                                 {
                                     work.work.map((work, index) => {
                                         return (
