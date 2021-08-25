@@ -1,10 +1,15 @@
 import React, { useContext } from 'react';
 import FormContext from '../../../context/FormContext';
-import { Typography, Box, Button } from '@material-ui/core';
+import { Typography, Box, Button, Grid } from '@material-ui/core';
 import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { PDFViewer, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { PDFViewer, Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 import PDFRender from '../../PDFRender';
+import PersonIcon from '@material-ui/icons/Person';
+import WorkIcon from '@material-ui/icons/Work';
+import SchoolIcon from '@material-ui/icons/School';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import BuildIcon from '@material-ui/icons/Build';
 // import { makeStyles } from '@material-ui/core/styles';
 
 //  material ui styles
@@ -53,6 +58,7 @@ const styles = StyleSheet.create({
         borderBottomColor: '#112131',
         borderBottomStyle: 'dotted',
     },
+
 });
 
 const Review = () => {
@@ -82,6 +88,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
+                            <PersonIcon/>
                             Personal Information
                         </Typography>
                     </AccordionSummary>
@@ -99,6 +106,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
+                            <SchoolIcon/>
                             Education
                         </Typography>
                     </AccordionSummary>
@@ -131,6 +139,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
+                            <WorkIcon />
                             Work Experience
                         </Typography>
                     </AccordionSummary>
@@ -161,6 +170,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
+                            <GitHubIcon/>
                             Projects
                         </Typography>
                     </AccordionSummary>
@@ -191,6 +201,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
+                            <BuildIcon/>
                             Skills
                         </Typography>
                     </AccordionSummary>
@@ -247,7 +258,6 @@ const Review = () => {
                                     <Text style={styles.name}> {personal.fName} <br /></Text>
                                     <Text> {personal.phone} | {personal.address} | {personal.email}</Text>
                                 </View>
-
                             </View>
 
                             <View style={styles.section}>
@@ -272,6 +282,9 @@ const Review = () => {
 
                             <View style={styles.section}>
                                 <Text style={styles.header}>Work Experience</Text>
+                                {/* <Typography><WorkIcon /></Typography>
+                                <Text><WorkIcon /></Text>
+                                <Text><Typography><WorkIcon /></Typography></Text> */}
                                 {
                                     work.work.map((work, index) => {
                                         return (
