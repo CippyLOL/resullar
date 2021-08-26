@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     personal: {
         textAlign: 'center',
         borderBottomWidth: 2,
-        // borderBottomColor: '#112131',
+        borderBottomColor: '#112131',
         borderBottomStyle: 'solid',
         paddingBottom: '10px'
     },
@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
     },
     header: {
         fontSize: 24,
-        // color: '#191970',
+        color: '#191970',
         borderBottomWidth: 0.5,
-        // borderBottomColor: '#112131',
+        borderBottomColor: '#112131',
         borderBottomStyle: 'dotted',
         marginBottom: '15px',
         fontWeight: 'extrabold',
