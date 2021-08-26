@@ -8,7 +8,7 @@ import PDFRender from '../../PDFRender';
 import PersonIcon from '@material-ui/icons/Person';
 import WorkIcon from '@material-ui/icons/Work';
 import SchoolIcon from '@material-ui/icons/School';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import GroupWorkIcon from '@material-ui/icons/GroupWork';
 import BuildIcon from '@material-ui/icons/Build';
 // import { makeStyles } from '@material-ui/core/styles';
 
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     section: {
         margin: 5,
         padding: 5,
-        flexGrow: 1
+        // flexGrow: .5
     },
     sectionHeader: {
         flexDirection: 'row',
@@ -44,19 +44,22 @@ const styles = StyleSheet.create({
     personal: {
         textAlign: 'center',
         borderBottomWidth: 2,
-        borderBottomColor: '#112131',
+        // borderBottomColor: '#112131',
         borderBottomStyle: 'solid',
         paddingBottom: '10px'
     },
-    name: { 
-        fontSize: 30
+    name: {
+        fontSize: 30,
+        textTransform: 'capitalize',
     },
-    header: { 
-        fontSize: 24 ,
-        color:'#191970',
+    header: {
+        fontSize: 24,
+        // color: '#191970',
         borderBottomWidth: 0.5,
-        borderBottomColor: '#112131',
+        // borderBottomColor: '#112131',
         borderBottomStyle: 'dotted',
+        marginBottom: '15px',
+        fontWeight: 'extrabold',
     },
 
 });
@@ -88,7 +91,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
-                            <PersonIcon/>
+                            <PersonIcon />
                             Personal Information
                         </Typography>
                     </AccordionSummary>
@@ -106,7 +109,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
-                            <SchoolIcon/>
+                            <SchoolIcon />
                             Education
                         </Typography>
                     </AccordionSummary>
@@ -170,7 +173,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
-                            <GitHubIcon/>
+                            <GroupWorkIcon />
                             Projects
                         </Typography>
                     </AccordionSummary>
@@ -201,7 +204,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
-                            <BuildIcon/>
+                            <BuildIcon />
                             Skills
                         </Typography>
                     </AccordionSummary>
@@ -298,10 +301,10 @@ const Review = () => {
                                             <div key={index}>
                                                 <View style={styles.sectionHeader}>
                                                     <Text> {work.companyName}</Text>
-                                                    <Text> {work.location}</Text>
+                                                    <Text> {work.location}, {work.startYear} - {work.endYear}</Text>
                                                 </View>
-                                                <Text>Responsibilities: {work.jobRole}</Text>
-                                                <Text> {work.startYear} - {work.endYear}</Text>
+                                                <Text>Responsibilities: {work.jobRole} <br /></Text>
+
                                             </div>
                                         )
                                     })
