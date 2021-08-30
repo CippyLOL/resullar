@@ -7,7 +7,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 function Header() {
-
+  
   const navLinksStyle = {
     color: 'white',
     textDecoration: 'none',
@@ -19,9 +19,8 @@ function Header() {
     justifyContent: 'center',
     alignItems: 'center',
     background: '#00B8EE',
-    color: 'white',
+    color: '#FFFFFF',
     height: '10vh',
-
   };
 
   const ulStyle = {
@@ -119,7 +118,7 @@ function Header() {
               )}
               {authState && (
                 <>
-                  <Link style={navLinksStyle} to="/userform"> <li>Resume Builder</li> </Link>
+                  <Link style={navLinksStyle} to="/collar"> <li>Resume Builder</li> </Link>
                   <Link style={navLinksStyle} to={`/preview/${id}`}> <li>View Resume</li> </Link>
                   <button style={login} onClick={logout}> <li style={navLinksStyle}>Logout </li></button>
                 </>

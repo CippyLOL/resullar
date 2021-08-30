@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
 import FormContext from '../../../context/FormContext';
-import { Typography, Box, Button } from '@material-ui/core';
+import { Typography, Box, Button, Grid } from '@material-ui/core';
 import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { PDFViewer, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { PDFViewer, Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 import PDFRender from '../../PDFRender';
-// import { makeStyles } from '@material-ui/core/styles';
+import PersonIcon from '@material-ui/icons/Person';
+import WorkIcon from '@material-ui/icons/Work';
+import SchoolIcon from '@material-ui/icons/School';
+import GroupWorkIcon from '@material-ui/icons/GroupWork';
+import BuildIcon from '@material-ui/icons/Build';
 
 //  material ui styles
 // const useStyles = makeStyles({
@@ -21,7 +25,7 @@ import PDFRender from '../../PDFRender';
 //     }
 // });
 
-//  PDP render styles
+//  PDF render styles
 const styles = StyleSheet.create({
     page: {
         flexDirection: 'column',
@@ -30,7 +34,7 @@ const styles = StyleSheet.create({
     section: {
         margin: 5,
         padding: 5,
-        flexGrow: 1
+        // flexGrow: .5
     },
     sectionHeader: {
         flexDirection: 'row',
@@ -43,16 +47,20 @@ const styles = StyleSheet.create({
         borderBottomStyle: 'solid',
         paddingBottom: '10px'
     },
-    name: { 
-        fontSize: 30
+    name: {
+        fontSize: 30,
+        textTransform: 'capitalize',
     },
-    header: { 
-        fontSize: 24 ,
-        color:'#191970',
+    header: {
+        fontSize: 24,
+        color: '#191970',
         borderBottomWidth: 0.5,
         borderBottomColor: '#112131',
         borderBottomStyle: 'dotted',
+        marginBottom: '15px',
+        fontWeight: 'extrabold',
     },
+
 });
 
 const Review = () => {
@@ -72,8 +80,8 @@ const Review = () => {
             {/* <Box> */}
 
             {/* Review Results */}
-            <Box display="flex" flexDirection="column" maxWidth="90vh">
-                <Typography variant="h1">
+            <Box display="flex" flexDirection="column" maxWidth="90vh" padding ={5}>
+                <Typography variant="h3">
                     Review
                 </Typography>
 
@@ -82,6 +90,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
+                            <PersonIcon />
                             Personal Information
                         </Typography>
                     </AccordionSummary>
@@ -99,6 +108,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
+                            <SchoolIcon />
                             Education
                         </Typography>
                     </AccordionSummary>
@@ -131,6 +141,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
+                            <WorkIcon />
                             Work Experience
                         </Typography>
                     </AccordionSummary>
@@ -161,6 +172,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
+                            <GroupWorkIcon />
                             Projects
                         </Typography>
                     </AccordionSummary>
@@ -191,6 +203,7 @@ const Review = () => {
                         expandIcon={<ExpandMoreIcon />}
                     >
                         <Typography variant="h4">
+                            <BuildIcon />
                             Skills
                         </Typography>
                     </AccordionSummary>
@@ -234,8 +247,8 @@ const Review = () => {
 
 
             {/* PDF preview */}
-            <Box>
-                <Typography variant="h1">
+            <Box padding ={5}>
+                <Typography variant="h3">
                     PDF Preview
                 </Typography>
 
@@ -272,16 +285,17 @@ const Review = () => {
 
                             <View style={styles.section}>
                                 <Text style={styles.header}>Work Experience</Text>
+                                
                                 {
                                     work.work.map((work, index) => {
                                         return (
                                             <div key={index}>
                                                 <View style={styles.sectionHeader}>
                                                     <Text> {work.companyname}</Text>
-                                                    <Text> {work.location}</Text>
+                                                    <Text> {work.location}, {work.startyear} - {work.endyear}</Text>
                                                 </View>
-                                                <Text>Responsibilities: {work.jobrole}</Text>
-                                                <Text> {work.startyear} - {work.endyear}</Text>
+                                                <Text>Responsibilities: {work.jobrole} <br /></Text>
+
                                             </div>
                                         )
                                     })
@@ -313,7 +327,7 @@ const Review = () => {
                                     skills.skills.map((skills, index) => {
                                         return (
                                             <div key={index}>
-                                                <Text>· {skills.skillset}</Text>
+                                                <Text>- {skills.skillset}</Text>
                                             </div>
                                         )
                                     })

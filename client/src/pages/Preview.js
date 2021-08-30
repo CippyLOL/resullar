@@ -1,10 +1,48 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Typography, Box, Button } from '@material-ui/core';
-import { useParams, useHistory } from 'react-router-dom';
+import { Box } from '@material-ui/core';
+import { useParams } from 'react-router-dom';
+import { PDFViewer, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+
+const styles = StyleSheet.create({
+    page: {
+        flexDirection: 'column',
+        backgroundColor: 'white'
+    },
+    section: {
+        margin: 5,
+        padding: 5,
+        // flexGrow: .5
+    },
+    sectionHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    personal: {
+        textAlign: 'center',
+        borderBottomWidth: 2,
+        borderBottomColor: '#112131',
+        borderBottomStyle: 'solid',
+        paddingBottom: '10px'
+    },
+    name: {
+        fontSize: 30,
+        textTransform: 'capitalize',
+    },
+    header: {
+        fontSize: 24,
+        color: '#191970',
+        borderBottomWidth: 0.5,
+        borderBottomColor: '#112131',
+        borderBottomStyle: 'dotted',
+        marginBottom: '15px',
+        fontWeight: 'extrabold',
+    },
+
+});
 
 const Review = () => {
-    let {id} = useParams();
+    let { id } = useParams();
 
     const [UserDetails, setUserDetails] = useState([]);
     const [Education, setEducation] = useState([]);
@@ -31,98 +69,98 @@ const Review = () => {
     }, []);
 
     return (
-        <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={20} minWidth="80vh">
+        <div className={'preview'}>
+            <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={20} minWidth="80vh">
+                <PDFViewer width="874" height="1240">
+                    <Document>
+                        <Page size="A4" style={styles.page}>
+                            <View style={styles.section}>
+                                <View style={styles.personal}>
+                                    {UserDetails.map((value, key) => {
+                                        return (
+                                            <div>
+                                                <Text style={styles.name}> {value.fullname} <br /></Text>
+                                                <Text> {value.phone} | {value.address} | {value.email}</Text>
+                                            </div>
+                                        );
+                                    })}
+                                </View>
 
-            {/* PDF preview */}
-            <Box m={10} display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={20} border={1} width={874} maxHeight={1240}>
-                <div>
-                    <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1}><div>
-                        <Typography variant="h3"> Personal Details </Typography></div>
-                    </Box>
+                            </View>
 
-                    <Box flexDirection="row" justifyContent="left" alignItems="left" padding={1}>
-                        {UserDetails.map((value, key) => {
-                            return (
-                                <div className="resume">
-                                    <div className="body"> <p>Full Name: {value.fullname}<br /></p></div>
-                                    <div className="body"> <p>Email: {value.email}<br /></p></div>
-                                    <div className="body"> <p>Phone: {value.phone}<br /></p></div>
-                                    <div className="body"> <p>Address: {value.address}<br /></p></div>
-                                </div>
-                            );
-                        })}
-                    </Box>
+                            <View style={styles.section}>
+                                <Text style={styles.header}>Education</Text>
+                                {
+                                    Education.map((value, key) => {
+                                        return (
+                                            <div>
+                                                <View style={styles.sectionHeader}>
+                                                    <Text> {value.schoolname}<br /></Text>
+                                                    <Text> {value.location} <br /></Text>
+                                                    <View style={styles.sectionHeader}>
+                                                        <Text> {value.major} | {value.certification} <br /></Text>
+                                                        <Text> {value.startyear} - {value.endyear} </Text>
+                                                    </View>
+                                                </View>
+                                            </div>
+                                        );
+                                    })}
+                            </View>
 
-                    <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1}><div>
-                        <Typography variant="h3"> Education </Typography></div>
-                    </Box>
+                            <View style={styles.section}>
+                                <Text style={styles.header}>Work Experience</Text>
+                                {
+                                    Work.map((value, key) => {
+                                        return (
+                                            <div>
+                                                <View style={styles.sectionHeader}>
+                                                    <Text> {value.companyname}</Text>
+                                                    <Text> {value.location}, {value.startyear} - {value.endyear}</Text>
+                                                </View>
+                                                <Text>Responsibilities: {value.jobrole}</Text>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </View>
 
-                    <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1}>
-                        {Education.map((value, key) => {
-                            return (
-                                <div className="resume">
-                                    <div className="body"> <p>School Name: {value.schoolname}<br /></p></div>
-                                    <div className="body"> <p>Location: {value.location}<br /></p></div>
-                                    <div className="body"> <p>Certification: {value.certification}<br /></p></div>
-                                    <div className="body"> <p>Major: {value.major}<br /></p></div>
-                                    <div className="body"> <p>Start Year: {value.startyear}<br /></p></div>
-                                    <div className="body"> <p>End Year: {value.endyear}<br /></p></div>
-                                </div>
-                            );
-                        })}
-                    </Box>
+                            <View style={styles.section}>
+                                <Text style={styles.header}>Projects</Text>
+                                {
+                                    Projects.map((value, key) => {
+                                        return (
+                                            <div>
+                                                <View style={styles.sectionHeader}>
+                                                    <Text> {value.projectname}</Text>
+                                                    <Text> {value.startyear} - {value.endyear}</Text>
+                                                </View>
 
-                    <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1}><div>
-                        <Typography variant="h3"> Work </Typography></div>
-                    </Box>
+                                                <Text>Description: {value.aboutproject}</Text>
 
-                    <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1}>
-                        {Work.map((value, key) => {
-                            return (
-                                <div className="resume">
-                                    <div className="body"> <p>Company Name: {value.companyname}<br /></p></div>
-                                    <div className="body"> <p>Location: {value.location}<br /></p></div>
-                                    <div className="body"> <p>Job Role: {value.jobrole}<br /></p></div>
-                                    <div className="body"> <p>Start Year: {value.startyear}<br /></p></div>
-                                    <div className="body"> <p>End Year: {value.endyear}<br /><br /></p></div>
-                                </div>
-                            );
-                        })}
-                    </Box>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </View>
 
-                    <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1}><div>
-                        <Typography variant="h3"> Projects </Typography></div>
-                    </Box>
-
-                    <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1}>
-                        {Projects.map((value, key) => {
-                            return (
-                                <div className="resume">
-                                    <div className="body"> <p>Project Name: {value.projectname}<br /></p></div>
-                                    <div className="body"> <p>About Project: {value.aboutproject}<br /></p></div>
-                                    <div className="body"> <p>Start Year: {value.startyear}<br /></p></div>
-                                    <div className="body"> <p>End Year: {value.endyear}<br /><br /></p></div>
-                                </div>
-                            );
-                        })}
-                    </Box>
-
-                    <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1}><div>
-                        <Typography variant="h3"> Skills </Typography></div>
-                    </Box>
-
-                    <Box display="flex" flexDirection="row" justifyContent="center" alignItems="center" padding={1}>
-                        {Skills.map((value, key) => {
-                            return (
-                                <div className="resume">
-                                    <div className="body"> <p>Skill: {value.skillset}<br /><br /></p></div>
-                                </div>
-                            );
-                        })}
-                    </Box>
-                </div>
+                            <View style={styles.section}>
+                                <Text style={styles.header} > Skills</Text>
+                                {
+                                    Skills.map((value, key) => {
+                                        return (
+                                            <div>
+                                                <Text>- {value.skillset}</Text>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </View>
+                        </Page>
+                    </Document>
+                </PDFViewer>
             </Box>
-        </Box>
+        </div>
+
     );
 }
 

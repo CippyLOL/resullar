@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Provider } from '../context/FormContext';
-import { withRouter, useParams, useHistory } from 'react-router-dom';
+import { withRouter, useHistory } from 'react-router-dom';
 import Personal from "../components/formComponents/formSections/Personal"
 import Education from "../components/formComponents/formSections/Education"
 import Work from "../components/formComponents/formSections/Work"

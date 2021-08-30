@@ -59,6 +59,12 @@ export const Projects = () => {
                                         Projects
                                     </Typography>
                                 </Grid>
+                                <Grid item xs={12}>
+                                    <Typography variant="body1">
+                                        If section does not apply, delete the field and move to the next section. <br />
+                                        All input fields are required.
+                                    </Typography>
+                                </Grid>
 
                                 <FieldArray
                                     name="projects"

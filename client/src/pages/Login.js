@@ -11,6 +11,7 @@ function Login() {
 
     const login = () => {
         const data = { username: username, password: password };
+
         axios.post("http://localhost:3001/auth/login", data).then((response) => {
             if (response.data.error) {
                 alert(response.data.error);
@@ -34,7 +35,7 @@ function Login() {
                 <Container maxWidth="md">
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Typography variant="h3" align="center">
+                            <Typography variant="h3" align="center" font='Helvetica'>
                                 Login Information
                             </Typography>
                         </Grid>

@@ -53,10 +53,16 @@ export const Skills = () => {
                     render={({ values }) => (
                         <Form>
 
-                            <Grid container spacing={2} direction="column">
+                            <Grid container spacing={2}>
                                 <Grid item xs={12}>
                                     <Typography variant="h3">
                                         Skills
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Typography variant="body1">
+                                        If section does not apply, delete the field and move to the next section. <br />
+                                        All input fields are required.
                                     </Typography>
                                 </Grid>
 
@@ -69,7 +75,7 @@ export const Skills = () => {
                                                 fullWidth
                                                 variant='contained'
                                                 style={{ width: '15em', marginTop: '1em', marginBottom: '2em' }}
-                                                onClick={() => arrayHelpers.push({ skillset: ""})}
+                                                onClick={() => arrayHelpers.push({ skillset: "" })}
                                             >
                                                 Add Skill
                                             </Button>
@@ -77,7 +83,7 @@ export const Skills = () => {
 
                                             {
                                                 values.skills.map((skills, index) => (
-                                                    <Grid container direction="row" spacing={1} key={index}>
+                                                    <Grid container direction="row" spacing={3} key={index}>
                                                         {/** both these conventions do the same */}
                                                         <Grid item xs>
                                                             <Typography variant="h4" >

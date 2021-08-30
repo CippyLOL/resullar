@@ -8,6 +8,7 @@ import UserForm from "./pages/UserForm";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Preview from "./pages/Preview";
+import Collar from "./pages/Collar";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
 
@@ -31,6 +32,7 @@ function App() {
           {/* all routes that explicitly defined will be sent to the 404 page */}
           {/* <Route path="*" component={NotFound} /> */}
           {/* Protected route to authenticate the user before using the form  */}
+          <Route path="/collar" component={Collar} />
           <ProtectedRoute path="/userform" component={UserForm} isAuth={isAuth}/>
         </Switch>
         <Footer />

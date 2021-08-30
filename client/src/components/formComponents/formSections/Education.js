@@ -34,7 +34,7 @@ const resumeForm = {
 
 export const Education = () => {
     const { education, setEducation, next, prev } = useContext(FormContext);
-    
+
     return (
         <div style={resumeForm}>
             <Container maxWidth="md">
@@ -52,6 +52,12 @@ export const Education = () => {
                                 <Grid item xs={12}>
                                     <Typography variant="h3">
                                         Education
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Typography variant="body1">
+                                        If section does not apply, delete the field and move to the next section. <br />
+                                        All input fields are required.
                                     </Typography>
                                 </Grid>
 

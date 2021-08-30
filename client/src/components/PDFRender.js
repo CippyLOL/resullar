@@ -7,7 +7,7 @@ import FormContext from '../context/FormContext';
 
 const styles = StyleSheet.create({
     page: {
-        flexDirection: 'row',
+        flexDirection: 'column',
         backgroundColor: 'white'
     },
     section: {
@@ -26,10 +26,10 @@ const PDFRender = () => {
         <Document>
             <Page size="A4" style={styles.page}>
                 <View style={styles.section}>
-                    <Text>Section #1</Text>
-                </View>
-                <View style={styles.section}>
-                    <Text>{personal.fName}</Text>
+                    <Text> {personal.fName} <br /></Text>
+                    <Text> {personal.email} <br /></Text>
+                    <Text> {personal.phone} <br /></Text>
+                    <Text> {personal.address} <br /></Text>
                 </View>
             </Page>
         </Document>

@@ -23,7 +23,6 @@ function Register() {
 
     const onSubmit = (data) => {
         axios.post("http://localhost:3001/auth", data).then((response) => {
-            alert("User created");
             history.push("/login");
         });
     };
