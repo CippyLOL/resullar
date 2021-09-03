@@ -135,9 +135,8 @@ const UserForm = () => {
             setWork(workInitialState);
             setProjects(projectsInitialState);
             setSkills(skillsInitialState);
-            window.location.reload();
             history.push("/preview/" + id);
-
+            window.location.reload();
             return;
         }
 

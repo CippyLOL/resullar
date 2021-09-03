@@ -17,8 +17,8 @@ function Login() {
                 alert(response.data.error);
             } else {
                 localStorage.setItem("accessToken", response.data);
-                window.location.reload();
                 history.push("/");
+                window.location.reload();
             }
         })
     };
