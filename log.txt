@@ -1,0 +1,368 @@
+commit da376e9232fecf5ebc6e02c6019cd96930b27ec6
+Merge: 1c8d635f c24069f1
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Sat Aug 21 22:30:13 2021 +0800
+
+    Merge pull request #26 from JiaLeMe/main
+    
+    Update Work.js
+
+commit c24069f1393ae77e3ebeeeb4c49d9573507e0fd6
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Sat Aug 21 22:28:34 2021 +0800
+
+    Update Work.js
+    
+    updated some titles to look more uniform
+
+commit 1c8d635fbd5ef45f4a3aa6cb9d4b61843600287c
+Merge: c5804955 bb7e0734
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 19 17:13:38 2021 +0800
+
+    Merge pull request #21 from JiaLeMe/main
+    
+    updating(?) existing stuff
+
+commit bb7e07343494963667e357a8402eb53e9ef6f4c7
+Merge: 26c13d54 c5804955
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 19 17:03:06 2021 +0800
+
+    Merge branch 'CippyLOL:main' into main
+
+commit c5804955421fb4bd325fa1bce2bdfdc4fabf12be
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Thu Aug 19 16:33:27 2021 +0800
+
+    Update Project.js #14
+    
+    Removed unused required field validation
+
+commit 26c13d541891529a25d681b720ffcb6c0fc1102a
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 19 15:14:03 2021 +0800
+
+    Update Review.js
+
+commit 19d5b70c0fc37a24189c620b0a9a911477c5c4f2
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 19 15:12:28 2021 +0800
+
+    Update package-lock.json
+
+commit b2bd4260e741c0356b97dd1e842cc28b2ec770f0
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Tue Aug 17 13:41:30 2021 +0800
+
+    Required Fields for form
+
+commit 726449fbd872135680162d30ed2a3fa6a0ed274d
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Sun Aug 15 22:33:36 2021 +0800
+
+    Protected routes #17
+    
+    authentication
+
+commit 137443bbb14ee8c0d4dd8ee2ec4086e27c01535c
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Sun Aug 15 10:42:27 2021 +0800
+
+    Update Register.js
+
+commit 2ed8be93585143383de837dadde3d0a829b2d756
+Merge: 352a2cc5 b3d2c7ce
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Sat Aug 14 21:27:15 2021 +0800
+
+    Merge pull request #19 from JiaLeMe/main
+    
+    Renaming some files to be capitalised
+
+commit b3d2c7ced35c5001319b1672c5ede42e9903c8a0
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Sat Aug 14 21:26:23 2021 +0800
+
+    Rename test.js to Test.js
+
+commit 32d4e67c41530a9794b4b366560fe5eb8125cae2
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Sat Aug 14 21:26:02 2021 +0800
+
+    Rename personal.js to Personal.js
+
+commit 352a2cc5e2de022dd969346a142b93027d66bc14
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Fri Aug 13 21:53:57 2021 +0800
+
+    Updated styling and password field #17
+    
+    changed textfield type to password
+    
+    Co-Authored-By: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+
+commit c0ddfd1df3d6519df3c0c43157e2422f3f33f5d7
+Merge: e6a10f2c 3a4b805e
+Author: Gillianne P <47998428+CippyLOL@users.noreply.github.com>
+Date:   Fri Aug 13 21:19:25 2021 +0800
+
+    Merge pull request #16 from CippyLOL/form
+    
+    Form
+
+commit 3a4b805e9442c115d41cd3ed842dcd7a8f54d167
+Merge: 4cad39a2 e6a10f2c
+Author: Gillianne P <47998428+CippyLOL@users.noreply.github.com>
+Date:   Fri Aug 13 21:18:25 2021 +0800
+
+    Merge branch 'main' into form
+
+commit 4cad39a28469f214f82dd4f26fe03b01df28da6a
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Fri Aug 13 21:04:29 2021 +0800
+
+    Updated Review.js #12
+    
+    used material ui accordion
+
+commit e6a10f2ce6fc6df58da476bacb2d6c63dcd3a39d
+Merge: 15f914e8 7c1dfc0e
+Author: Gillianne P <47998428+CippyLOL@users.noreply.github.com>
+Date:   Thu Aug 12 22:32:01 2021 +0800
+
+    Merge pull request #15 from JiaLeMe/main
+    
+    Added login page and register page #15
+
+commit 7c1dfc0ed77644e4a746bff2fd8feffc63424c77
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 12 16:50:29 2021 +0800
+
+    Update ResumeBuilderForm.js
+    
+    misc
+
+commit 89b450928707fea2dcac1702a371ab9cdfa04bd3
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 12 16:47:08 2021 +0800
+
+    Update Register.js
+    
+    added password confirmation
+
+commit 04c5075879164ea75093193d3fe119e0f27cc4ff
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 12 16:30:59 2021 +0800
+
+    added login page and register page
+    
+    Added a login page for users to log in. Added a button in the log in page to bring users to the register page.
+    
+    Added a register page
+
+commit a6e9b399a70281eafb2d335b03b206cb9bc7bd9e
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Wed Aug 11 21:39:43 2021 +0800
+
+    Update Skills.js
+
+commit 95656940448ad34382c1267cc01ab9c009c53d39
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Wed Aug 11 14:05:54 2021 +0800
+
+    Added other form sections #12
+
+commit cbc470f3d7ab94c57541624486c9bf771c6f8215
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Wed Aug 11 11:28:16 2021 +0800
+
+    added fieldarray #12
+    
+    able to retrieve values
+
+commit 0bb817a96d868b6c8762e0a383bb2115d475f3c7
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Tue Aug 10 00:07:20 2021 +0800
+
+    Testing FieldArray for Education #12
+
+commit 4d478ab7101dedd1fb709bf6f317294ec795bb92
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Mon Aug 9 19:38:49 2021 +0800
+
+    Adding multi page form #12
+    
+    Trial version
+
+commit 7d331c75a7b68c2cb17b176345ea18be7b1d29f7
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Sun Aug 8 16:03:11 2021 +0800
+
+    form sections #12
+    
+    add in form sections for the resume builder
+
+commit 15f914e86afb243f9200e92b90e60e56983315a5
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Fri Aug 6 12:36:02 2021 +0800
+
+    Refactoring and added footer
+    
+    added svg files for logo, redesigned homepage and added a footer with github link.
+    
+    Co-Authored-By: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+
+commit 0db84d3ea541e1c6ce94e912b663cebed743fd70
+Merge: 0f4cae1f 63d7165a
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 5 20:38:14 2021 +0800
+
+    Merge pull request #9 from JiaLeMe/main
+    
+    renaming file
+
+commit 63d7165a4c4ce872af16f31c54980992aabb1b00
+Merge: dd0ea34c 0f4cae1f
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 5 20:36:51 2021 +0800
+
+    Merge branch 'CippyLOL:main' into main
+
+commit dd0ea34c48d7d0332b6a2570aa716ab5481744ff
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 5 20:36:15 2021 +0800
+
+    Rename resumeBuilderForm.js to ResumeBuilderForm.js
+
+commit 0f4cae1f3498803a957a24149cf4f70138d76bd1
+Merge: ea937679 87af3f0b
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 5 20:00:55 2021 +0800
+
+    Merge pull request #8 from JiaLeMe/main
+    
+    cleaning up home js
+
+commit 87af3f0b0684586cb3d308b203d9a6d420df440e
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 5 19:53:12 2021 +0800
+
+    cleaning up home js
+
+commit ea937679ea28b7c85eb8a60188d9d7297a966191
+Merge: 94f75d00 ddab180f
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 5 19:49:50 2021 +0800
+
+    Merge pull request #7 from JiaLeMe/main
+    
+    testing pull
+
+commit ddab180f8088494278182ce8f69d1ba47519ad81
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 5 19:41:42 2021 +0800
+
+    Update Home.js
+
+commit 31172accebdff2d461367c3219c4d1d202c1d1d8
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 5 19:39:55 2021 +0800
+
+    Update Home.js
+
+commit 94f75d000cd054393873205ffce0865c3e120e02
+Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>
+Date:   Thu Aug 5 18:34:16 2021 +0800
+
+    Added home page with some css
+
+commit f4a3ac7b6e20f0a4cb2d39dbecce26ba772d549f
+Merge: f520cce2 778ed23d
+Author: Gillianne P <47998428+CippyLOL@users.noreply.github.com>
+Date:   Tue Aug 3 10:27:01 2021 +0800
+
+    Merge pull request #4 from CippyLOL/test
+    
+    Added header navbar with routing
+
+commit 778ed23d08629bbff2b6b458cdb6280d379cda9c
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Tue Aug 3 10:26:30 2021 +0800
+
+    Added header navbar with routing
+    
+    used react-router-dom, styling to be redone
+
+commit f520cce217e3237ad271d46b7bfa01bb8c49895c
+Merge: fe76479d 940d56b5
+Author: Gillianne P <47998428+CippyLOL@users.noreply.github.com>
+Date:   Sun Aug 1 15:23:31 2021 +0800
+
+    Merge pull request #1 from CippyLOL/test
+    
+    Update App.js
+
+commit 940d56b5b469dc4668c83b3ddb4a535b814b3c7c
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Sun Aug 1 15:22:17 2021 +0800
+
+    Update App.js
+
+commit fe76479d5053bdb7789b9ac62802703259d17021
+Author: Gillianne P <47998428+CippyLOL@users.noreply.github.com>
+Date:   Sun Aug 1 14:48:09 2021 +0800
+
+    Create README.md
+
+commit d15699e69b98b8da680169dff4dd50647d632611
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Sun Aug 1 14:35:27 2021 +0800
+
+    Added form components
+    
+    create base for form components and added form validation using yup and formik
+
+commit 56966dfa4163f18b2614a209516f98683fa1d24d
+Author: Gillianne P <47998428+CippyLOL@users.noreply.github.com>
+Date:   Tue Jul 27 19:46:20 2021 +0800
+
+    Update README.md
+
+commit 0113e013ef576b4341530c2528b15e6012233612
+Author: Gillianne P <47998428+CippyLOL@users.noreply.github.com>
+Date:   Tue Jul 27 19:45:55 2021 +0800
+
+    Create README.md
+
+commit 95bd551676d21b13f54a9e564d4230097129e481
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Tue Jul 27 19:44:54 2021 +0800
+
+    added material ui
+    
+    npm install @material-ui/core
+
+commit 7c097d9af3ec64f06f51bac2caaca1325deec510
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Tue Jul 27 19:44:03 2021 +0800
+
+    server
+
+commit 783104d7f888d24767332906ba7507a7fc5ce3a3
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Tue Jul 27 19:40:34 2021 +0800
+
+    Create index.js
+
+commit 5373abec656377b565bd06edb8f6ffb27d580b28
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Tue Jul 27 19:39:25 2021 +0800
+
+    create client
+
+commit 76ab3c037bd40cc32236cb42a8cf23baf0caa7f1
+Author: Gillianne Papasin <47998428+CippyLOL@users.noreply.github.com>
+Date:   Tue Jul 27 19:35:55 2021 +0800
+
+    Create .DS_Store
