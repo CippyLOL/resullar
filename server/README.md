@@ -12,7 +12,7 @@ Solution 1
 "terminal.integrated.shellArgs.windows": ["-ExecutionPolicy", "Bypass"]
 
 Solution 2
-1)in vscode you will have to create a shell profile with these args by adding below in settings.json (ctrl + shift + p and type "settings.json") /n
+1)in vscode you will have to create a shell profile with these args by adding below in settings.json (ctrl + shift + p and type "settings.json")
 2)Add the following code in settings.json
 "terminal.integrated.profiles.windows": {
   "PowerShell": {
