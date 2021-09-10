@@ -6,7 +6,7 @@ Using nodejs
 
 If you encounter a similar problem "cannot be loaded because running scripts is disabled on this system." Follow the following instructions.
 
-# Solution 1
+####Solution 1
 go to File -> Preferences -> Settings -> Extensions -> Scroll down and find "Edit in settings.json". 
 # Add the following code in settings.json
 "terminal.integrated.shellArgs.windows": ["-ExecutionPolicy", "Bypass"]
