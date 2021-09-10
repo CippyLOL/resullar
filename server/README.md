@@ -4,6 +4,7 @@ Using nodejs
 
 
 
+
 # If you encounter a similar problem "cannot be loaded because running scripts is disabled on this system." Follow the following instructions.
 
 Solution 1
@@ -22,5 +23,6 @@ Solution 2
   }
 },
 "terminal.integrated.defaultProfile.windows": "PowerShell",
+
 
 Do not forget to restart the visual studio code
