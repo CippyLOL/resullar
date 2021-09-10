@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import { Formik, Form, FieldArray } from 'formik';
 import * as Yup from 'yup';
 import TextFieldWrapper from '../formUI/TextField';
@@ -9,17 +10,17 @@ import FormContext from '../../../context/FormContext';
 
 
 // // ARRAY
-// const validationSchema = Yup.object().shape({
-//     skills: Yup.array().of(
-//         Yup.object().shape({
-//             skills: Yup.string(),
-//         })
-//     )
-// });
-
 const validationSchema = Yup.object().shape({
-    skills: Yup.array().of(Yup.string().required('Required'))
+    skills: Yup.array().of(
+        Yup.object().shape({
+            skillset: Yup.string(),
+        })
+    )
 });
+
+// const validationSchema = Yup.object().shape({
+//     skills: Yup.array().of(Yup.string())
+// });
 
 const resumeForm = {
     minHeight: '80vh',
@@ -46,20 +47,18 @@ export const Skills = () => {
                     validationSchema={validationSchema}
                     onSubmit={(values) => {
                         setSkills(values);
-                        console.log(skills);
                         next();
                         // prev();
                     }}
                     render={({ values }) => (
                         <Form>
 
-                            <Grid container spacing={2} direction="column">
+                            <Grid container spacing={2}>
                                 <Grid item xs={12}>
                                     <Typography variant="h3">
                                         Skills
                                     </Typography>
                                 </Grid>
-
                                 <Grid item xs={12}>
                                     <Typography variant="body1">
                                         If section does not apply, delete the field and move to the next section. <br />
@@ -76,7 +75,7 @@ export const Skills = () => {
                                                 fullWidth
                                                 variant='contained'
                                                 style={{ width: '15em', marginTop: '1em', marginBottom: '2em' }}
-                                                onClick={() => arrayHelpers.push('')}
+                                                onClick={() => arrayHelpers.push({ skillset: "" })}
                                             >
                                                 Add Skill
                                             </Button>
@@ -84,7 +83,7 @@ export const Skills = () => {
 
                                             {
                                                 values.skills.map((skills, index) => (
-                                                    <Grid container direction="row" spacing={1} key={index}>
+                                                    <Grid container direction="row" spacing={3} key={index}>
                                                         {/** both these conventions do the same */}
                                                         <Grid item xs>
                                                             <Typography variant="h4" >
@@ -94,7 +93,7 @@ export const Skills = () => {
 
                                                         <Grid item xs={8}>
                                                             <TextFieldWrapper
-                                                                name={`skills.[${index}]`}
+                                                                name={`skills.${index}.skillset`}
                                                                 label="Skill"
                                                             />
                                                         </Grid>

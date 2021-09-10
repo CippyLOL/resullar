@@ -1,3 +1,41 @@
+commit 2f9eb82241789545cb194922e69252810ee1e390
+Author: tan29121996 <tan29121996@gmail.com>
+Date:   Fri Sep 3 09:43:20 2021 +0800
+
+    Minor change
+
+commit b1688af72dc68ebbe860d2695eb1f582aea0f884
+Author: tan29121996 <tan29121996@gmail.com>
+Date:   Mon Aug 30 11:04:30 2021 +0800
+
+    Final
+    
+    Added choose collar page. Implemented pdf render using backend data.
+
+commit 4f047cb940f00e15da96693534cb1b3c3c358688
+Author: tan29121996 <tan29121996@gmail.com>
+Date:   Tue Aug 24 21:29:20 2021 +0800
+
+    integrated pdf render
+
+commit 48fff0e3c9fd916ec02a84ad084e66d8592e0b6c
+Author: tan29121996 <tan29121996@gmail.com>
+Date:   Tue Aug 24 18:54:24 2021 +0800
+
+    fixed errors
+
+commit 0534a51df76ceff001f8bfa108f43d05db020f8b
+Author: tan29121996 <tan29121996@gmail.com>
+Date:   Tue Aug 24 18:45:25 2021 +0800
+
+    resolved errors
+
+commit 34b70d55f1ce7d140cc2b196e2359717e5639475
+Author: tan29121996 <tan29121996@gmail.com>
+Date:   Tue Aug 24 17:47:18 2021 +0800
+
+    database preview
+
 commit da376e9232fecf5ebc6e02c6019cd96930b27ec6
 Merge: 1c8d635f c24069f1
 Author: JiaLeMe <88268435+JiaLeMe@users.noreply.github.com>

@@ -1,0 +1,8 @@
+.collar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #4a4a4a;
+    padding-bottom: 3rem;
+}

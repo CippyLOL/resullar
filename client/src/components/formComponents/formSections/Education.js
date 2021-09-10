@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import { Formik, Form, FieldArray } from 'formik';
 import * as Yup from 'yup';
 import TextFieldWrapper from '../formUI/TextField';
@@ -7,17 +8,16 @@ import { Button } from '@material-ui/core';
 import { Grid, Container, Typography, Box } from '@material-ui/core';
 import FormContext from '../../../context/FormContext';
 
-
 // ARRAY
 const validationSchema = Yup.object().shape({
     education: Yup.array().of(
         Yup.object().shape({
-            schoolName: Yup.string().required('Required'),
-            location: Yup.string().required('Required'),
-            major: Yup.string().required('Required'),
-            certification: Yup.string().required('Required'),
-            startYear: Yup.number().integer().typeError('Invalid year').required('Required'),
-            endYear: Yup.number().integer().typeError('Invalid year').required('Required'),
+            schoolname: Yup.string(),
+            location: Yup.string(),
+            major: Yup.string(),
+            certification: Yup.string(),
+            startyear: Yup.number().integer().typeError('Invalid year'),
+            endyear: Yup.number().integer().typeError('Invalid year'),
         })
     )
 });
@@ -32,9 +32,9 @@ const resumeForm = {
 };
 
 
-
 export const Education = () => {
     const { education, setEducation, next, prev } = useContext(FormContext);
+
     return (
         <div style={resumeForm}>
             <Container maxWidth="md">
@@ -43,9 +43,7 @@ export const Education = () => {
                     validationSchema={validationSchema}
                     onSubmit={(values) => {
                         setEducation(values);
-                        console.log(education);
                         next();
-                        // prev();
                     }}
                     render={({ values }) => (
                         <Form>
@@ -72,7 +70,7 @@ export const Education = () => {
                                                 fullWidth
                                                 variant='contained'
                                                 style={{ width: '15em', marginTop: '1em', marginBottom: '2em' }}
-                                                onClick={() => arrayHelpers.push({ schoolName: "", location: "", major: "", certification: "", startYear: "", endYear: "", })}
+                                                onClick={() => arrayHelpers.push({ schoolname: "", location: "", major: "", certification: "", startyear: "", endyear: "", })}
                                             >
                                                 Add Education
                                             </Button>
@@ -97,7 +95,7 @@ export const Education = () => {
                                                         </Grid>
                                                         <Grid item xs={12}>
                                                             <TextFieldWrapper
-                                                                name={`education.${index}.schoolName`}
+                                                                name={`education.${index}.schoolname`}
                                                                 label="School Name"
                                                             />
                                                         </Grid>
@@ -121,13 +119,13 @@ export const Education = () => {
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`education.${index}.startYear`}
+                                                                name={`education.${index}.startyear`}
                                                                 label="Start Year"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`education.${index}.endYear`}
+                                                                name={`education.${index}.endyear`}
                                                                 label="End Year"
                                                             />
                                                         </Grid>

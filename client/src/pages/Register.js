@@ -1,9 +1,11 @@
 import React from 'react'
-import { Formik, Form } from "formik";
+import axios from 'axios';
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup"
-import { Grid, Container, Typography, Box } from '@material-ui/core';
+import { Grid, Container, Typography, Button, Box } from '@material-ui/core';
 import TextFieldWrapper from '../components/formComponents/formUI/TextField';
 import ButtonWrapper from '../components/formComponents/formUI/Button';
+import { useHistory } from 'react-router-dom';
 
 function Register() {
 
@@ -13,12 +15,16 @@ function Register() {
 
     const validationSchema = Yup.object().shape({
         username: Yup.string().required('Please enter a username'),
-        password: Yup.string().min(7).max(45).required('Required'),
+        password: Yup.string().min(7).max(45).required(),
         passwordConfirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')
     });
 
+    let history = useHistory();
+
     const onSubmit = (data) => {
-        console.log(data);
+        axios.post("http://localhost:3001/auth", data).then((response) => {
+            history.push("/login");
+        });
     };
 
     const pageWrapper = {

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import { Formik, Form, FieldArray } from 'formik';
 import * as Yup from 'yup';
 import TextFieldWrapper from '../formUI/TextField';
@@ -12,10 +13,11 @@ import FormContext from '../../../context/FormContext';
 const validationSchema = Yup.object().shape({
     projects: Yup.array().of(
         Yup.object().shape({
-            projectName: Yup.string().required('Required'),
-            aboutProject: Yup.string().required('Required'),
-            startYear: Yup.number().integer().typeError('Invalid year').required('Required'),
-            endYear: Yup.number().integer().typeError('Invalid year').required('Required'),
+            companyname: Yup.string(),
+            location: Yup.string(),
+            aboutproject: Yup.string(),
+            startyear: Yup.number().integer().typeError('Invalid year'),
+            endyear: Yup.number().integer().typeError('Invalid year'),
         })
     )
 });
@@ -45,7 +47,6 @@ export const Projects = () => {
                     validationSchema={validationSchema}
                     onSubmit={(values) => {
                         setProjects(values);
-                        console.log(projects);
                         next();
                         // prev();
                     }}
@@ -74,7 +75,7 @@ export const Projects = () => {
                                                 fullWidth
                                                 variant='contained'
                                                 style={{ width: '15em', marginTop: '1em', marginBottom: '2em' }}
-                                                onClick={() => arrayHelpers.push({ projectName: "", aboutProject: "", startYear: "", endYear: "", })}
+                                                onClick={() => arrayHelpers.push({ projectname: "", aboutproject: "", startyear: "", endyear: "", })}
                                             >
                                                 Add Project
                                             </Button>
@@ -99,26 +100,26 @@ export const Projects = () => {
                                                         </Grid>
                                                         <Grid item xs={12}>
                                                             <TextFieldWrapper
-                                                                name={`projects.${index}.projectName`}
+                                                                name={`projects.${index}.projectname`}
                                                                 label="Project Name"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={12}>
                                                             <TextFieldWrapper
                                                                 multiline rows={10}
-                                                                name={`projects.${index}.aboutProject`}
+                                                                name={`projects.${index}.aboutproject`}
                                                                 label="About Project"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`projects.${index}.startYear`}
+                                                                name={`projects.${index}.startyear`}
                                                                 label="Start Year"
                                                             />
                                                         </Grid>
                                                         <Grid item xs={6}>
                                                             <TextFieldWrapper
-                                                                name={`projects.${index}.endYear`}
+                                                                name={`projects.${index}.endyear`}
                                                                 label="End Year"
                                                             />
                                                         </Grid>
